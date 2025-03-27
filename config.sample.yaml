@@ -1,0 +1,29 @@
+root_path: /nzbs
+webdav_port: 8080
+api_port: 8081
+db_path: /config/usenet-drive.db
+usenet:
+  download:
+    max_download_workers: 5
+    providers:
+      - host: post.otherusenet.server
+        port: 119
+        username: pepe
+        password: 1234
+        tls: false
+        max_connections: 25
+  upload:
+    groups:
+      - alt.binaries.test
+    file_allow_list:
+      - .mkv
+      - .mp4
+      - .avi
+      - .ts
+    providers:
+      - host: my.usenet.server
+        port: 80
+        username: pepe
+        password: 1234
+        ttl: true
+        max_connections: 49
