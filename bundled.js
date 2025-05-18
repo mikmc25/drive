@@ -24008,9 +24008,9 @@ var require_dist = __commonJS({
   }
 });
 
-// node_modules/path-to-regexp/index.js
+// node_modules/router/node_modules/path-to-regexp/index.js
 var require_path_to_regexp2 = __commonJS({
-  "node_modules/path-to-regexp/index.js"(exports2, module2) {
+  "node_modules/router/node_modules/path-to-regexp/index.js"(exports2, module2) {
     module2.exports = pathtoRegexp;
     var MATCHING_GROUP_REGEXP = /\((?!\?)/g;
     function pathtoRegexp(path, keys, options) {
@@ -49756,8 +49756,8 @@ var CONFIG = {
   TMDB_API_KEY: "6f5528da1d383de1b85c80756d82372e",
   MEDIAFLOW_PROXY_URL: "https://cdpproxy.stuff2-stuff216.workers.dev/video?url=",
   BASE_URLS: [
-    "https://hankchin-gem1.hf.space/pr=dxg3ntqe36umdhpu/stream",
-    "https://hankchin-gem2.hf.space/pr=dxg3ntqe36umdhpu/stream"
+    "https://hankchin-bunmin.hf.space/pr=96tes52wphmxt7f5,tb=71b1b659-61e2-4eaa-80f8-5a56a4102a87/stream",
+    "https://hankchin-bunmin2.hf.space/pr=96tes52wphmxt7f5,tb=71b1b659-61e2-4eaa-80f8-5a56a4102a87/stream"
   ],
   PORT: 3005,
   HEALTH_PORT: 3006,
