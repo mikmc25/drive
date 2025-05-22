@@ -1,14 +1,19 @@
-# Base image with Node.js LTS
-FROM node:18-slim
+FROM node:20-slim
 
-# Create app directory
 WORKDIR /app
 
-# Copy only bundled output
-COPY bundled.js ./
+# Copy only the bundled application file
+COPY app.js .
 
-# Expose the port (must match the one in your code, here it's 3005)
-EXPOSE 3005
+# Default environment variables
+ENV PORT=7860
+ENV NODE_ENV=production
 
-# Set the command to run your bundled Node.js app
-CMD ["node", "bundled.js"]
+# Make the application executable
+RUN chmod +x app.js
+
+# Expose the port that the application uses
+EXPOSE 7860
+
+# Start the application directly
+CMD ["./app.js"]
