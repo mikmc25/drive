@@ -4,7 +4,7 @@ emoji: 🌖
 colorFrom: pink
 colorTo: pink
 sdk: docker
-app_port: 3005
+app_port: 7860
 pinned: false
 ---
 
