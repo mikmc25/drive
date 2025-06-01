@@ -24405,29 +24405,41 @@ var VIDEO_EXTENSIONS = [
   ".ts"
 ];
 var STREAM_SOURCES = {
-  mikmc5_bt4model: {
-    url: "https://mikmc5-bt4model.hf.space",
-    name: "\u15F7\uFF34\u2783\u24D6PrX"
+  hankchin_animai4bt: {
+    url: "https://hankchin-animai4bt.hf.space",
+    name: "\u0372\u0585\u027E\u027E\u04BD\u0572\u0567\u0193\u0105\u04C0\u0105\xD7\u057E"
   },
   hankchin_bitsai: {
     url: "https://hankchin-bitsai.hf.space",
     name: "\u{1D4D1}\u{1D4F2}\u{1D4FD}\u{1D4E2}\u{1D4EE}\u{1D4EA}\u{1D4FB}\u{1D4EC}\u{1D4F1}"
   },
-  oimerts_tcsv: {
-    url: "https://oimerts-tcsv.hf.space",
-    name: "\uFF34\uFF23\uFF33\uFF36"
+  hankchin_ruhq: {
+    url: "https://mikmc5-ruhq.hf.space",
+    name: "Gl\u{1F31E}DLS"
+  },
+  hankchin_ytsai: {
+    url: "https://hankchin-ytsai.hf.space",
+    name: "\uFF25\uFF58\uFF54\uFF54\uFF4F"
+  },
+  mikmc5_bt4model: {
+    url: "https://mikmc5-bt4model.hf.space",
+    name: "\u15F7\uFF34\u2783\u24D6"
   },
   mikmc5_sow: {
     url: "https://mikmc5-sow.hf.space",
     name: "\u{1D4E3}\u2C95\u1D62\u{1D450}\u2C95\u2090\u{1D460}\u{1D460}"
   },
-  cf_1337: {
-    url: "https://1337x.h-y.workers.dev",
-    name: "1\uFE0F3\uFE0F\u20E33\uFE0F\u20E37\uFE0F\u20E3"
+  mikmc5_t2n: {
+    url: "https://mikmc5-t2n.hf.space",
+    name: "\uFF2D\u039B\uFF27\uFF2E\u03A3\uFF34\uFF24\uFF2C"
   },
-  cf_tdown: {
-    url: "https://tdown.h-y.workers.dev",
-    name: "\u0372\u0585\u027E\u027E\u04BD\u0572\u0567\u13A0\u0585\u0572\u04C0\u0585\u0105\u056A"
+  mikmc5_uiai: {
+    url: "https://mikmc5-huiaiy.hf.space",
+    name: "\u3010\uFF35\uFF29\uFF2E\uFF24\uFF25\uFF38\u3011"
+  },
+  testittv_limett: {
+    url: "https://oimerts-tcsv.hf.space",
+    name: "\u{1D413}\u{1D402}\u{1D412}\u{1D415}"
   }
 };
 
@@ -25262,7 +25274,7 @@ app.get("/manifest.json", (req, res) => {
   const manifest = {
     id: "org.magnetio.hy",
     version: "1.0.0",
-    name: "\u{1F177} \u{1F148} \u{1F178}\u{1F441}\xB2",
+    name: "\u{1F177} \u{1F148} \u{1F178}\u{1F441}\u2076",
     description: "Stream movies and series via Debrid services - Configuration Required",
     resources: [],
     types: ["movie", "series"],
@@ -25283,7 +25295,7 @@ app.get("/:apiKeys/manifest.json", (req, res) => {
     return res.json({
       id: "org.magnetio.hy",
       version: "1.0.0",
-      name: "\u{1F177} \u{1F148} \u{1F178}\u{1F441}\xB2",
+      name: "\u{1F177} \u{1F148} \u{1F178}\u{1F441}\u2076",
       description: "Invalid API keys provided - Please check your configuration",
       resources: [],
       types: ["movie", "series"],
@@ -25299,7 +25311,7 @@ app.get("/:apiKeys/manifest.json", (req, res) => {
   const manifest = {
     id: "org.magnetio.hy",
     version: "1.0.0",
-    name: "\u{1F177} \u{1F148} \u{1F178}\u{1F441}\xB2",
+    name: "\u{1F177} \u{1F148} \u{1F178}\u{1F441}\u2076",
     description: "Stream movies and series via Debrid services",
     resources: ["stream"],
     types: ["movie", "series"],
