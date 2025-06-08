@@ -11,8 +11,7 @@ var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __require = /* @__PURE__ */ ((x) => typeof require !== "undefined" ? require : typeof Proxy !== "undefined" ? new Proxy(x, {
   get: (a, b) => (typeof require !== "undefined" ? require : a)[b]
 }) : x)(function(x) {
-  if (typeof require !== "undefined")
-    return require.apply(this, arguments);
+  if (typeof require !== "undefined") return require.apply(this, arguments);
   throw Error('Dynamic require of "' + x + '" is not supported');
 });
 var __commonJS = (cb, mod) => function __require2() {
@@ -733,8 +732,7 @@ var require_inherits = __commonJS({
   "node_modules/inherits/inherits.js"(exports, module) {
     try {
       util = __require("util");
-      if (typeof util.inherits !== "function")
-        throw "";
+      if (typeof util.inherits !== "function") throw "";
       module.exports = util.inherits;
     } catch (e) {
       module.exports = require_inherits_browser();
@@ -920,9 +918,9 @@ var require_http_errors = __commonJS({
   }
 });
 
-// node_modules/body-parser/node_modules/debug/node_modules/ms/index.js
+// node_modules/ms/index.js
 var require_ms = __commonJS({
-  "node_modules/body-parser/node_modules/debug/node_modules/ms/index.js"(exports, module) {
+  "node_modules/ms/index.js"(exports, module) {
     var s = 1e3;
     var m = s * 60;
     var h = m * 60;
@@ -1022,9 +1020,9 @@ var require_ms = __commonJS({
   }
 });
 
-// node_modules/body-parser/node_modules/debug/src/debug.js
+// node_modules/debug/src/debug.js
 var require_debug = __commonJS({
-  "node_modules/body-parser/node_modules/debug/src/debug.js"(exports, module) {
+  "node_modules/debug/src/debug.js"(exports, module) {
     exports = module.exports = createDebug.debug = createDebug["default"] = createDebug;
     exports.coerce = coerce;
     exports.disable = disable;
@@ -1045,8 +1043,7 @@ var require_debug = __commonJS({
     }
     function createDebug(namespace) {
       function debug() {
-        if (!debug.enabled)
-          return;
+        if (!debug.enabled) return;
         var self = debug;
         var curr = +/* @__PURE__ */ new Date();
         var ms = curr - (prevTime || curr);
@@ -1064,8 +1061,7 @@ var require_debug = __commonJS({
         }
         var index = 0;
         args[0] = args[0].replace(/%([a-zA-Z%])/g, function(match, format) {
-          if (match === "%%")
-            return match;
+          if (match === "%%") return match;
           index++;
           var formatter = exports.formatters[format];
           if ("function" === typeof formatter) {
@@ -1096,8 +1092,7 @@ var require_debug = __commonJS({
       var split = (typeof namespaces === "string" ? namespaces : "").split(/[\s,]+/);
       var len = split.length;
       for (var i = 0; i < len; i++) {
-        if (!split[i])
-          continue;
+        if (!split[i]) continue;
         namespaces = split[i].replace(/\*/g, ".*?");
         if (namespaces[0] === "-") {
           exports.skips.push(new RegExp("^" + namespaces.substr(1) + "$"));
@@ -1124,16 +1119,15 @@ var require_debug = __commonJS({
       return false;
     }
     function coerce(val) {
-      if (val instanceof Error)
-        return val.stack || val.message;
+      if (val instanceof Error) return val.stack || val.message;
       return val;
     }
   }
 });
 
-// node_modules/body-parser/node_modules/debug/src/browser.js
+// node_modules/debug/src/browser.js
 var require_browser = __commonJS({
-  "node_modules/body-parser/node_modules/debug/src/browser.js"(exports, module) {
+  "node_modules/debug/src/browser.js"(exports, module) {
     exports = module.exports = require_debug();
     exports.log = log;
     exports.formatArgs = formatArgs;
@@ -1169,15 +1163,13 @@ var require_browser = __commonJS({
     function formatArgs(args) {
       var useColors2 = this.useColors;
       args[0] = (useColors2 ? "%c" : "") + this.namespace + (useColors2 ? " %c" : " ") + args[0] + (useColors2 ? "%c " : " ") + "+" + exports.humanize(this.diff);
-      if (!useColors2)
-        return;
+      if (!useColors2) return;
       var c = "color: " + this.color;
       args.splice(1, 0, c, "color: inherit");
       var index = 0;
       var lastC = 0;
       args[0].replace(/%[a-zA-Z%]/g, function(match) {
-        if ("%%" === match)
-          return;
+        if ("%%" === match) return;
         index++;
         if ("%c" === match) {
           lastC = index;
@@ -1219,9 +1211,9 @@ var require_browser = __commonJS({
   }
 });
 
-// node_modules/body-parser/node_modules/debug/src/node.js
+// node_modules/debug/src/node.js
 var require_node = __commonJS({
-  "node_modules/body-parser/node_modules/debug/src/node.js"(exports, module) {
+  "node_modules/debug/src/node.js"(exports, module) {
     var tty = __require("tty");
     var util = __require("util");
     exports = module.exports = require_debug();
@@ -1239,14 +1231,10 @@ var require_node = __commonJS({
         return k.toUpperCase();
       });
       var val = process.env[key];
-      if (/^(yes|on|true|enabled)$/i.test(val))
-        val = true;
-      else if (/^(no|off|false|disabled)$/i.test(val))
-        val = false;
-      else if (val === "null")
-        val = null;
-      else
-        val = Number(val);
+      if (/^(yes|on|true|enabled)$/i.test(val)) val = true;
+      else if (/^(no|off|false|disabled)$/i.test(val)) val = false;
+      else if (val === "null") val = null;
+      else val = Number(val);
       obj[prop] = val;
       return obj;
     }, {});
@@ -1343,9 +1331,9 @@ var require_node = __commonJS({
   }
 });
 
-// node_modules/body-parser/node_modules/debug/src/index.js
+// node_modules/debug/src/index.js
 var require_src = __commonJS({
-  "node_modules/body-parser/node_modules/debug/src/index.js"(exports, module) {
+  "node_modules/debug/src/index.js"(exports, module) {
     if (typeof process !== "undefined" && process.type === "renderer") {
       module.exports = require_browser();
     } else {
@@ -1450,18 +1438,14 @@ var require_safer = __commonJS({
     var safer = {};
     var key;
     for (key in buffer) {
-      if (!buffer.hasOwnProperty(key))
-        continue;
-      if (key === "SlowBuffer" || key === "Buffer")
-        continue;
+      if (!buffer.hasOwnProperty(key)) continue;
+      if (key === "SlowBuffer" || key === "Buffer") continue;
       safer[key] = buffer[key];
     }
     var Safer = safer.Buffer = {};
     for (key in Buffer2) {
-      if (!Buffer2.hasOwnProperty(key))
-        continue;
-      if (key === "allocUnsafe" || key === "allocUnsafeSlow")
-        continue;
+      if (!Buffer2.hasOwnProperty(key)) continue;
+      if (key === "allocUnsafe" || key === "allocUnsafeSlow") continue;
       Safer[key] = Buffer2[key];
     }
     safer.Buffer.prototype = Buffer2.prototype;
@@ -1803,10 +1787,8 @@ var require_utf16 = __commonJS({
         else {
           var asciiCharsLE = 0, asciiCharsBE = 0, _len = Math.min(buf.length - buf.length % 2, 64);
           for (var i = 0; i < _len; i += 2) {
-            if (buf[i] === 0 && buf[i + 1] !== 0)
-              asciiCharsBE++;
-            if (buf[i] !== 0 && buf[i + 1] === 0)
-              asciiCharsLE++;
+            if (buf[i] === 0 && buf[i + 1] !== 0) asciiCharsBE++;
+            if (buf[i] !== 0 && buf[i + 1] === 0) asciiCharsLE++;
           }
           if (asciiCharsBE > asciiCharsLE)
             enc = "utf-16be";
@@ -2727,10 +2709,8 @@ var require_dbcs_codec = __commonJS({
             this._setEncodeChar(uChar.charCodeAt(0), codecOptions.encodeAdd[uChar]);
       }
       this.defCharSB = this.encodeTable[0][iconv.defaultCharSingleByte.charCodeAt(0)];
-      if (this.defCharSB === UNASSIGNED)
-        this.defCharSB = this.encodeTable[0]["?"];
-      if (this.defCharSB === UNASSIGNED)
-        this.defCharSB = "?".charCodeAt(0);
+      if (this.defCharSB === UNASSIGNED) this.defCharSB = this.encodeTable[0]["?"];
+      if (this.defCharSB === UNASSIGNED) this.defCharSB = "?".charCodeAt(0);
       if (typeof codecOptions.gb18030 === "function") {
         this.gb18030 = codecOptions.gb18030();
         var thirdByteNodeIdx = this.decodeTables.length;
@@ -2828,8 +2808,7 @@ var require_dbcs_codec = __commonJS({
         node = this.encodeTableSeq[SEQ_START - bucket[low]];
       } else {
         node = {};
-        if (bucket[low] !== UNASSIGNED)
-          node[DEF_CHAR] = bucket[low];
+        if (bucket[low] !== UNASSIGNED) node[DEF_CHAR] = bucket[low];
         bucket[low] = SEQ_START - this.encodeTableSeq.length;
         this.encodeTableSeq.push(node);
       }
@@ -2873,8 +2852,7 @@ var require_dbcs_codec = __commonJS({
       var newBuf = Buffer2.alloc(str.length * (this.gb18030 ? 4 : 3)), leadSurrogate = this.leadSurrogate, seqObj = this.seqObj, nextChar = -1, i2 = 0, j = 0;
       while (true) {
         if (nextChar === -1) {
-          if (i2 == str.length)
-            break;
+          if (i2 == str.length) break;
           var uCode = str.charCodeAt(i2++);
         } else {
           var uCode = nextChar;
@@ -4545,8 +4523,7 @@ var require_streams = __commonJS({
         return done(new Error("Iconv encoding stream needs strings as its input."));
       try {
         var res = this.conv.write(chunk);
-        if (res && res.length)
-          this.push(res);
+        if (res && res.length) this.push(res);
         done();
       } catch (e) {
         done(e);
@@ -4555,8 +4532,7 @@ var require_streams = __commonJS({
     IconvLiteEncoderStream.prototype._flush = function(done) {
       try {
         var res = this.conv.end();
-        if (res && res.length)
-          this.push(res);
+        if (res && res.length) this.push(res);
         done();
       } catch (e) {
         done(e);
@@ -4587,8 +4563,7 @@ var require_streams = __commonJS({
         return done(new Error("Iconv decoding stream needs buffers as its input."));
       try {
         var res = this.conv.write(chunk);
-        if (res && res.length)
-          this.push(res, this.encoding);
+        if (res && res.length) this.push(res, this.encoding);
         done();
       } catch (e) {
         done(e);
@@ -4597,8 +4572,7 @@ var require_streams = __commonJS({
     IconvLiteDecoderStream.prototype._flush = function(done) {
       try {
         var res = this.conv.end();
-        if (res && res.length)
-          this.push(res, this.encoding);
+        if (res && res.length) this.push(res, this.encoding);
         done();
       } catch (e) {
         done(e);
@@ -4627,8 +4601,7 @@ var require_extend_node = __commonJS({
       var original = void 0;
       iconv.supportsNodeEncodingsExtension = !(Buffer2.from || new Buffer2(0) instanceof Uint8Array);
       iconv.extendNodeEncodings = function extendNodeEncodings() {
-        if (original)
-          return;
+        if (original) return;
         original = {};
         if (!iconv.supportsNodeEncodingsExtension) {
           console.error("ACTION NEEDED: require('iconv-lite').extendNodeEncodings() is not supported in your version of Node");
@@ -4656,10 +4629,8 @@ var require_extend_node = __commonJS({
           encoding = String(encoding || "utf8").toLowerCase();
           if (Buffer2.isNativeEncoding(encoding))
             return original.SlowBufferToString.call(this, encoding, start, end);
-          if (typeof start == "undefined")
-            start = 0;
-          if (typeof end == "undefined")
-            end = this.length;
+          if (typeof start == "undefined") start = 0;
+          if (typeof end == "undefined") end = this.length;
           return iconv.decode(this.slice(start, end), encoding);
         };
         original.SlowBufferWrite = SlowBuffer.prototype.write;
@@ -4691,8 +4662,7 @@ var require_extend_node = __commonJS({
           if (string.length > 0 && (length < 0 || offset < 0))
             throw new RangeError("attempt to write beyond buffer bounds");
           var buf = iconv.encode(string, encoding);
-          if (buf.length < length)
-            length = buf.length;
+          if (buf.length < length) length = buf.length;
           buf.copy(this, offset, 0, length);
           return length;
         };
@@ -4712,10 +4682,8 @@ var require_extend_node = __commonJS({
           encoding = String(encoding || "utf8").toLowerCase();
           if (Buffer2.isNativeEncoding(encoding))
             return original.BufferToString.call(this, encoding, start, end);
-          if (typeof start == "undefined")
-            start = 0;
-          if (typeof end == "undefined")
-            end = this.length;
+          if (typeof start == "undefined") start = 0;
+          if (typeof end == "undefined") end = this.length;
           return iconv.decode(this.slice(start, end), encoding);
         };
         original.BufferWrite = Buffer2.prototype.write;
@@ -4748,8 +4716,7 @@ var require_extend_node = __commonJS({
           if (string.length > 0 && (length < 0 || offset < 0))
             throw new RangeError("attempt to write beyond buffer bounds");
           var buf = iconv.encode(string, encoding);
-          if (buf.length < length)
-            length = buf.length;
+          if (buf.length < length) length = buf.length;
           buf.copy(this, offset, 0, length);
           return length;
         };
@@ -4940,13 +4907,11 @@ var require_raw_body = __commonJS({
     module.exports = getRawBody;
     var ICONV_ENCODING_MESSAGE_REGEXP = /^Encoding not recognized: /;
     function getDecoder(encoding) {
-      if (!encoding)
-        return null;
+      if (!encoding) return null;
       try {
         return iconv.getDecoder(encoding);
       } catch (e) {
-        if (!ICONV_ENCODING_MESSAGE_REGEXP.test(e.message))
-          throw e;
+        if (!ICONV_ENCODING_MESSAGE_REGEXP.test(e.message)) throw e;
         throw createError(415, "specified encoding unsupported", {
           encoding,
           type: "encoding.unsupported"
@@ -4984,8 +4949,7 @@ var require_raw_body = __commonJS({
       }
       return new Promise(function executor(resolve, reject) {
         readStream(stream, encoding, length, limit, function onRead(err, buf) {
-          if (err)
-            return reject(err);
+          if (err) return reject(err);
           resolve(buf);
         });
       });
@@ -5052,8 +5016,7 @@ var require_raw_body = __commonJS({
         }
       }
       function onAborted() {
-        if (complete)
-          return;
+        if (complete) return;
         done(createError(400, "request aborted", {
           code: "ECONNABORTED",
           expected: length,
@@ -5063,8 +5026,7 @@ var require_raw_body = __commonJS({
         }));
       }
       function onData(chunk) {
-        if (complete)
-          return;
+        if (complete) return;
         received += chunk.length;
         if (limit !== null && received > limit) {
           done(createError(413, "request entity too large", {
@@ -5079,10 +5041,8 @@ var require_raw_body = __commonJS({
         }
       }
       function onEnd(err) {
-        if (complete)
-          return;
-        if (err)
-          return done(err);
+        if (complete) return;
+        if (err) return done(err);
         if (length !== null && received !== length) {
           done(createError(400, "request size did not match content length", {
             expected: length,
@@ -5222,10 +5182,8 @@ var require_on_finished = __commonJS({
       eeMsg = eeSocket = first([[msg, "end", "finish"]], onFinish);
       function onSocket(socket) {
         msg.removeListener("socket", onSocket);
-        if (finished)
-          return;
-        if (eeMsg !== eeSocket)
-          return;
+        if (finished) return;
+        if (eeMsg !== eeSocket) return;
         eeSocket = first([[socket, "error", "close"]], onFinish);
       }
       if (msg.socket) {
@@ -5247,10 +5205,8 @@ var require_on_finished = __commonJS({
     }
     function createListener(msg) {
       function listener(err) {
-        if (msg.__onFinished === listener)
-          msg.__onFinished = null;
-        if (!listener.queue)
-          return;
+        if (msg.__onFinished === listener) msg.__onFinished = null;
+        if (!listener.queue) return;
         var queue = listener.queue;
         listener.queue = null;
         for (var i = 0; i < queue.length; i++) {
@@ -5262,8 +5218,7 @@ var require_on_finished = __commonJS({
     }
     function patchAssignSocket(res, callback) {
       var assignSocket = res.assignSocket;
-      if (typeof assignSocket !== "function")
-        return;
+      if (typeof assignSocket !== "function") return;
       res.assignSocket = function _assignSocket(socket) {
         assignSocket.call(this, socket);
         callback(socket);
@@ -14112,8 +14067,7 @@ var require_mime_types = __commonJS({
       }
       if (mime.indexOf("charset") === -1) {
         var charset2 = exports.charset(mime);
-        if (charset2)
-          mime += "; charset=" + charset2.toLowerCase();
+        if (charset2) mime += "; charset=" + charset2.toLowerCase();
       }
       return mime;
     }
@@ -15935,7 +15889,7 @@ var require_get_intrinsic = __commonJS({
             if (!allowMissing) {
               throw new $TypeError("base intrinsic for " + name + " exists, but the property is not available.");
             }
-            return void 0;
+            return void undefined2;
           }
           if ($gOPD && i + 1 >= parts.length) {
             var desc = $gOPD(value, part);
@@ -15968,14 +15922,11 @@ var require_call_bound = __commonJS({
     var $indexOf = callBindBasic([GetIntrinsic("%String.prototype.indexOf%")]);
     module.exports = function callBoundIntrinsic(name, allowMissing) {
       var intrinsic = (
-        /** @type {(this: unknown, ...args: unknown[]) => unknown} */
+        /** @type {Parameters<typeof callBindBasic>[0][0]} */
         GetIntrinsic(name, !!allowMissing)
       );
       if (typeof intrinsic === "function" && $indexOf(name, ".prototype.") > -1) {
-        return callBindBasic(
-          /** @type {const} */
-          [intrinsic]
-        );
+        return callBindBasic([intrinsic]);
       }
       return intrinsic;
     };
@@ -17121,8 +17072,7 @@ var require_body_parser = __commonJS({
       var _json = exports.json(opts);
       return function bodyParser2(req, res, next) {
         _json(req, res, function(err) {
-          if (err)
-            return next(err);
+          if (err) return next(err);
           _urlencoded(req, res, next);
         });
       };
@@ -17180,440 +17130,6 @@ var require_merge_descriptors = __commonJS({
         Object.defineProperty(dest, name, descriptor);
       });
       return dest;
-    }
-  }
-});
-
-// node_modules/finalhandler/node_modules/debug/node_modules/ms/index.js
-var require_ms2 = __commonJS({
-  "node_modules/finalhandler/node_modules/debug/node_modules/ms/index.js"(exports, module) {
-    var s = 1e3;
-    var m = s * 60;
-    var h = m * 60;
-    var d = h * 24;
-    var y = d * 365.25;
-    module.exports = function(val, options) {
-      options = options || {};
-      var type = typeof val;
-      if (type === "string" && val.length > 0) {
-        return parse(val);
-      } else if (type === "number" && isNaN(val) === false) {
-        return options.long ? fmtLong(val) : fmtShort(val);
-      }
-      throw new Error(
-        "val is not a non-empty string or a valid number. val=" + JSON.stringify(val)
-      );
-    };
-    function parse(str) {
-      str = String(str);
-      if (str.length > 100) {
-        return;
-      }
-      var match = /^((?:\d+)?\.?\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|years?|yrs?|y)?$/i.exec(
-        str
-      );
-      if (!match) {
-        return;
-      }
-      var n = parseFloat(match[1]);
-      var type = (match[2] || "ms").toLowerCase();
-      switch (type) {
-        case "years":
-        case "year":
-        case "yrs":
-        case "yr":
-        case "y":
-          return n * y;
-        case "days":
-        case "day":
-        case "d":
-          return n * d;
-        case "hours":
-        case "hour":
-        case "hrs":
-        case "hr":
-        case "h":
-          return n * h;
-        case "minutes":
-        case "minute":
-        case "mins":
-        case "min":
-        case "m":
-          return n * m;
-        case "seconds":
-        case "second":
-        case "secs":
-        case "sec":
-        case "s":
-          return n * s;
-        case "milliseconds":
-        case "millisecond":
-        case "msecs":
-        case "msec":
-        case "ms":
-          return n;
-        default:
-          return void 0;
-      }
-    }
-    function fmtShort(ms) {
-      if (ms >= d) {
-        return Math.round(ms / d) + "d";
-      }
-      if (ms >= h) {
-        return Math.round(ms / h) + "h";
-      }
-      if (ms >= m) {
-        return Math.round(ms / m) + "m";
-      }
-      if (ms >= s) {
-        return Math.round(ms / s) + "s";
-      }
-      return ms + "ms";
-    }
-    function fmtLong(ms) {
-      return plural(ms, d, "day") || plural(ms, h, "hour") || plural(ms, m, "minute") || plural(ms, s, "second") || ms + " ms";
-    }
-    function plural(ms, n, name) {
-      if (ms < n) {
-        return;
-      }
-      if (ms < n * 1.5) {
-        return Math.floor(ms / n) + " " + name;
-      }
-      return Math.ceil(ms / n) + " " + name + "s";
-    }
-  }
-});
-
-// node_modules/finalhandler/node_modules/debug/src/debug.js
-var require_debug2 = __commonJS({
-  "node_modules/finalhandler/node_modules/debug/src/debug.js"(exports, module) {
-    exports = module.exports = createDebug.debug = createDebug["default"] = createDebug;
-    exports.coerce = coerce;
-    exports.disable = disable;
-    exports.enable = enable;
-    exports.enabled = enabled;
-    exports.humanize = require_ms2();
-    exports.names = [];
-    exports.skips = [];
-    exports.formatters = {};
-    var prevTime;
-    function selectColor(namespace) {
-      var hash = 0, i;
-      for (i in namespace) {
-        hash = (hash << 5) - hash + namespace.charCodeAt(i);
-        hash |= 0;
-      }
-      return exports.colors[Math.abs(hash) % exports.colors.length];
-    }
-    function createDebug(namespace) {
-      function debug() {
-        if (!debug.enabled)
-          return;
-        var self = debug;
-        var curr = +/* @__PURE__ */ new Date();
-        var ms = curr - (prevTime || curr);
-        self.diff = ms;
-        self.prev = prevTime;
-        self.curr = curr;
-        prevTime = curr;
-        var args = new Array(arguments.length);
-        for (var i = 0; i < args.length; i++) {
-          args[i] = arguments[i];
-        }
-        args[0] = exports.coerce(args[0]);
-        if ("string" !== typeof args[0]) {
-          args.unshift("%O");
-        }
-        var index = 0;
-        args[0] = args[0].replace(/%([a-zA-Z%])/g, function(match, format) {
-          if (match === "%%")
-            return match;
-          index++;
-          var formatter = exports.formatters[format];
-          if ("function" === typeof formatter) {
-            var val = args[index];
-            match = formatter.call(self, val);
-            args.splice(index, 1);
-            index--;
-          }
-          return match;
-        });
-        exports.formatArgs.call(self, args);
-        var logFn = debug.log || exports.log || console.log.bind(console);
-        logFn.apply(self, args);
-      }
-      debug.namespace = namespace;
-      debug.enabled = exports.enabled(namespace);
-      debug.useColors = exports.useColors();
-      debug.color = selectColor(namespace);
-      if ("function" === typeof exports.init) {
-        exports.init(debug);
-      }
-      return debug;
-    }
-    function enable(namespaces) {
-      exports.save(namespaces);
-      exports.names = [];
-      exports.skips = [];
-      var split = (typeof namespaces === "string" ? namespaces : "").split(/[\s,]+/);
-      var len = split.length;
-      for (var i = 0; i < len; i++) {
-        if (!split[i])
-          continue;
-        namespaces = split[i].replace(/\*/g, ".*?");
-        if (namespaces[0] === "-") {
-          exports.skips.push(new RegExp("^" + namespaces.substr(1) + "$"));
-        } else {
-          exports.names.push(new RegExp("^" + namespaces + "$"));
-        }
-      }
-    }
-    function disable() {
-      exports.enable("");
-    }
-    function enabled(name) {
-      var i, len;
-      for (i = 0, len = exports.skips.length; i < len; i++) {
-        if (exports.skips[i].test(name)) {
-          return false;
-        }
-      }
-      for (i = 0, len = exports.names.length; i < len; i++) {
-        if (exports.names[i].test(name)) {
-          return true;
-        }
-      }
-      return false;
-    }
-    function coerce(val) {
-      if (val instanceof Error)
-        return val.stack || val.message;
-      return val;
-    }
-  }
-});
-
-// node_modules/finalhandler/node_modules/debug/src/browser.js
-var require_browser2 = __commonJS({
-  "node_modules/finalhandler/node_modules/debug/src/browser.js"(exports, module) {
-    exports = module.exports = require_debug2();
-    exports.log = log;
-    exports.formatArgs = formatArgs;
-    exports.save = save;
-    exports.load = load;
-    exports.useColors = useColors;
-    exports.storage = "undefined" != typeof chrome && "undefined" != typeof chrome.storage ? chrome.storage.local : localstorage();
-    exports.colors = [
-      "lightseagreen",
-      "forestgreen",
-      "goldenrod",
-      "dodgerblue",
-      "darkorchid",
-      "crimson"
-    ];
-    function useColors() {
-      if (typeof window !== "undefined" && window.process && window.process.type === "renderer") {
-        return true;
-      }
-      return typeof document !== "undefined" && document.documentElement && document.documentElement.style && document.documentElement.style.WebkitAppearance || // is firebug? http://stackoverflow.com/a/398120/376773
-      typeof window !== "undefined" && window.console && (window.console.firebug || window.console.exception && window.console.table) || // is firefox >= v31?
-      // https://developer.mozilla.org/en-US/docs/Tools/Web_Console#Styling_messages
-      typeof navigator !== "undefined" && navigator.userAgent && navigator.userAgent.toLowerCase().match(/firefox\/(\d+)/) && parseInt(RegExp.$1, 10) >= 31 || // double check webkit in userAgent just in case we are in a worker
-      typeof navigator !== "undefined" && navigator.userAgent && navigator.userAgent.toLowerCase().match(/applewebkit\/(\d+)/);
-    }
-    exports.formatters.j = function(v) {
-      try {
-        return JSON.stringify(v);
-      } catch (err) {
-        return "[UnexpectedJSONParseError]: " + err.message;
-      }
-    };
-    function formatArgs(args) {
-      var useColors2 = this.useColors;
-      args[0] = (useColors2 ? "%c" : "") + this.namespace + (useColors2 ? " %c" : " ") + args[0] + (useColors2 ? "%c " : " ") + "+" + exports.humanize(this.diff);
-      if (!useColors2)
-        return;
-      var c = "color: " + this.color;
-      args.splice(1, 0, c, "color: inherit");
-      var index = 0;
-      var lastC = 0;
-      args[0].replace(/%[a-zA-Z%]/g, function(match) {
-        if ("%%" === match)
-          return;
-        index++;
-        if ("%c" === match) {
-          lastC = index;
-        }
-      });
-      args.splice(lastC, 0, c);
-    }
-    function log() {
-      return "object" === typeof console && console.log && Function.prototype.apply.call(console.log, console, arguments);
-    }
-    function save(namespaces) {
-      try {
-        if (null == namespaces) {
-          exports.storage.removeItem("debug");
-        } else {
-          exports.storage.debug = namespaces;
-        }
-      } catch (e) {
-      }
-    }
-    function load() {
-      var r;
-      try {
-        r = exports.storage.debug;
-      } catch (e) {
-      }
-      if (!r && typeof process !== "undefined" && "env" in process) {
-        r = process.env.DEBUG;
-      }
-      return r;
-    }
-    exports.enable(load());
-    function localstorage() {
-      try {
-        return window.localStorage;
-      } catch (e) {
-      }
-    }
-  }
-});
-
-// node_modules/finalhandler/node_modules/debug/src/node.js
-var require_node2 = __commonJS({
-  "node_modules/finalhandler/node_modules/debug/src/node.js"(exports, module) {
-    var tty = __require("tty");
-    var util = __require("util");
-    exports = module.exports = require_debug2();
-    exports.init = init;
-    exports.log = log;
-    exports.formatArgs = formatArgs;
-    exports.save = save;
-    exports.load = load;
-    exports.useColors = useColors;
-    exports.colors = [6, 2, 3, 4, 5, 1];
-    exports.inspectOpts = Object.keys(process.env).filter(function(key) {
-      return /^debug_/i.test(key);
-    }).reduce(function(obj, key) {
-      var prop = key.substring(6).toLowerCase().replace(/_([a-z])/g, function(_, k) {
-        return k.toUpperCase();
-      });
-      var val = process.env[key];
-      if (/^(yes|on|true|enabled)$/i.test(val))
-        val = true;
-      else if (/^(no|off|false|disabled)$/i.test(val))
-        val = false;
-      else if (val === "null")
-        val = null;
-      else
-        val = Number(val);
-      obj[prop] = val;
-      return obj;
-    }, {});
-    var fd = parseInt(process.env.DEBUG_FD, 10) || 2;
-    if (1 !== fd && 2 !== fd) {
-      util.deprecate(function() {
-      }, "except for stderr(2) and stdout(1), any other usage of DEBUG_FD is deprecated. Override debug.log if you want to use a different log function (https://git.io/debug_fd)")();
-    }
-    var stream = 1 === fd ? process.stdout : 2 === fd ? process.stderr : createWritableStdioStream(fd);
-    function useColors() {
-      return "colors" in exports.inspectOpts ? Boolean(exports.inspectOpts.colors) : tty.isatty(fd);
-    }
-    exports.formatters.o = function(v) {
-      this.inspectOpts.colors = this.useColors;
-      return util.inspect(v, this.inspectOpts).split("\n").map(function(str) {
-        return str.trim();
-      }).join(" ");
-    };
-    exports.formatters.O = function(v) {
-      this.inspectOpts.colors = this.useColors;
-      return util.inspect(v, this.inspectOpts);
-    };
-    function formatArgs(args) {
-      var name = this.namespace;
-      var useColors2 = this.useColors;
-      if (useColors2) {
-        var c = this.color;
-        var prefix = "  \x1B[3" + c + ";1m" + name + " \x1B[0m";
-        args[0] = prefix + args[0].split("\n").join("\n" + prefix);
-        args.push("\x1B[3" + c + "m+" + exports.humanize(this.diff) + "\x1B[0m");
-      } else {
-        args[0] = (/* @__PURE__ */ new Date()).toUTCString() + " " + name + " " + args[0];
-      }
-    }
-    function log() {
-      return stream.write(util.format.apply(util, arguments) + "\n");
-    }
-    function save(namespaces) {
-      if (null == namespaces) {
-        delete process.env.DEBUG;
-      } else {
-        process.env.DEBUG = namespaces;
-      }
-    }
-    function load() {
-      return process.env.DEBUG;
-    }
-    function createWritableStdioStream(fd2) {
-      var stream2;
-      var tty_wrap = process.binding("tty_wrap");
-      switch (tty_wrap.guessHandleType(fd2)) {
-        case "TTY":
-          stream2 = new tty.WriteStream(fd2);
-          stream2._type = "tty";
-          if (stream2._handle && stream2._handle.unref) {
-            stream2._handle.unref();
-          }
-          break;
-        case "FILE":
-          var fs2 = __require("fs");
-          stream2 = new fs2.SyncWriteStream(fd2, { autoClose: false });
-          stream2._type = "fs";
-          break;
-        case "PIPE":
-        case "TCP":
-          var net = __require("net");
-          stream2 = new net.Socket({
-            fd: fd2,
-            readable: false,
-            writable: true
-          });
-          stream2.readable = false;
-          stream2.read = null;
-          stream2._type = "pipe";
-          if (stream2._handle && stream2._handle.unref) {
-            stream2._handle.unref();
-          }
-          break;
-        default:
-          throw new Error("Implement me. Unknown stream file type!");
-      }
-      stream2.fd = fd2;
-      stream2._isStdio = true;
-      return stream2;
-    }
-    function init(debug) {
-      debug.inspectOpts = {};
-      var keys = Object.keys(exports.inspectOpts);
-      for (var i = 0; i < keys.length; i++) {
-        debug.inspectOpts[keys[i]] = exports.inspectOpts[keys[i]];
-      }
-    }
-    exports.enable(load());
-  }
-});
-
-// node_modules/finalhandler/node_modules/debug/src/index.js
-var require_src2 = __commonJS({
-  "node_modules/finalhandler/node_modules/debug/src/index.js"(exports, module) {
-    if (typeof process !== "undefined" && process.type === "renderer") {
-      module.exports = require_browser2();
-    } else {
-      module.exports = require_node2();
     }
   }
 });
@@ -17731,11 +17247,17 @@ var require_parseurl = __commonJS({
             }
             break;
           case 9:
+          /* \t */
           case 10:
+          /* \n */
           case 12:
+          /* \f */
           case 13:
+          /* \r */
           case 32:
+          /*    */
           case 35:
+          /* #  */
           case 160:
           case 65279:
             return parse(str);
@@ -17761,7 +17283,7 @@ var require_parseurl = __commonJS({
 var require_finalhandler = __commonJS({
   "node_modules/finalhandler/index.js"(exports, module) {
     "use strict";
-    var debug = require_src2()("finalhandler");
+    var debug = require_src()("finalhandler");
     var encodeUrl = require_encodeurl();
     var escapeHtml = require_escape_html();
     var onFinished = require_on_finished();
@@ -17907,440 +17429,6 @@ var require_finalhandler = __commonJS({
   }
 });
 
-// node_modules/express/node_modules/debug/node_modules/ms/index.js
-var require_ms3 = __commonJS({
-  "node_modules/express/node_modules/debug/node_modules/ms/index.js"(exports, module) {
-    var s = 1e3;
-    var m = s * 60;
-    var h = m * 60;
-    var d = h * 24;
-    var y = d * 365.25;
-    module.exports = function(val, options) {
-      options = options || {};
-      var type = typeof val;
-      if (type === "string" && val.length > 0) {
-        return parse(val);
-      } else if (type === "number" && isNaN(val) === false) {
-        return options.long ? fmtLong(val) : fmtShort(val);
-      }
-      throw new Error(
-        "val is not a non-empty string or a valid number. val=" + JSON.stringify(val)
-      );
-    };
-    function parse(str) {
-      str = String(str);
-      if (str.length > 100) {
-        return;
-      }
-      var match = /^((?:\d+)?\.?\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|years?|yrs?|y)?$/i.exec(
-        str
-      );
-      if (!match) {
-        return;
-      }
-      var n = parseFloat(match[1]);
-      var type = (match[2] || "ms").toLowerCase();
-      switch (type) {
-        case "years":
-        case "year":
-        case "yrs":
-        case "yr":
-        case "y":
-          return n * y;
-        case "days":
-        case "day":
-        case "d":
-          return n * d;
-        case "hours":
-        case "hour":
-        case "hrs":
-        case "hr":
-        case "h":
-          return n * h;
-        case "minutes":
-        case "minute":
-        case "mins":
-        case "min":
-        case "m":
-          return n * m;
-        case "seconds":
-        case "second":
-        case "secs":
-        case "sec":
-        case "s":
-          return n * s;
-        case "milliseconds":
-        case "millisecond":
-        case "msecs":
-        case "msec":
-        case "ms":
-          return n;
-        default:
-          return void 0;
-      }
-    }
-    function fmtShort(ms) {
-      if (ms >= d) {
-        return Math.round(ms / d) + "d";
-      }
-      if (ms >= h) {
-        return Math.round(ms / h) + "h";
-      }
-      if (ms >= m) {
-        return Math.round(ms / m) + "m";
-      }
-      if (ms >= s) {
-        return Math.round(ms / s) + "s";
-      }
-      return ms + "ms";
-    }
-    function fmtLong(ms) {
-      return plural(ms, d, "day") || plural(ms, h, "hour") || plural(ms, m, "minute") || plural(ms, s, "second") || ms + " ms";
-    }
-    function plural(ms, n, name) {
-      if (ms < n) {
-        return;
-      }
-      if (ms < n * 1.5) {
-        return Math.floor(ms / n) + " " + name;
-      }
-      return Math.ceil(ms / n) + " " + name + "s";
-    }
-  }
-});
-
-// node_modules/express/node_modules/debug/src/debug.js
-var require_debug3 = __commonJS({
-  "node_modules/express/node_modules/debug/src/debug.js"(exports, module) {
-    exports = module.exports = createDebug.debug = createDebug["default"] = createDebug;
-    exports.coerce = coerce;
-    exports.disable = disable;
-    exports.enable = enable;
-    exports.enabled = enabled;
-    exports.humanize = require_ms3();
-    exports.names = [];
-    exports.skips = [];
-    exports.formatters = {};
-    var prevTime;
-    function selectColor(namespace) {
-      var hash = 0, i;
-      for (i in namespace) {
-        hash = (hash << 5) - hash + namespace.charCodeAt(i);
-        hash |= 0;
-      }
-      return exports.colors[Math.abs(hash) % exports.colors.length];
-    }
-    function createDebug(namespace) {
-      function debug() {
-        if (!debug.enabled)
-          return;
-        var self = debug;
-        var curr = +/* @__PURE__ */ new Date();
-        var ms = curr - (prevTime || curr);
-        self.diff = ms;
-        self.prev = prevTime;
-        self.curr = curr;
-        prevTime = curr;
-        var args = new Array(arguments.length);
-        for (var i = 0; i < args.length; i++) {
-          args[i] = arguments[i];
-        }
-        args[0] = exports.coerce(args[0]);
-        if ("string" !== typeof args[0]) {
-          args.unshift("%O");
-        }
-        var index = 0;
-        args[0] = args[0].replace(/%([a-zA-Z%])/g, function(match, format) {
-          if (match === "%%")
-            return match;
-          index++;
-          var formatter = exports.formatters[format];
-          if ("function" === typeof formatter) {
-            var val = args[index];
-            match = formatter.call(self, val);
-            args.splice(index, 1);
-            index--;
-          }
-          return match;
-        });
-        exports.formatArgs.call(self, args);
-        var logFn = debug.log || exports.log || console.log.bind(console);
-        logFn.apply(self, args);
-      }
-      debug.namespace = namespace;
-      debug.enabled = exports.enabled(namespace);
-      debug.useColors = exports.useColors();
-      debug.color = selectColor(namespace);
-      if ("function" === typeof exports.init) {
-        exports.init(debug);
-      }
-      return debug;
-    }
-    function enable(namespaces) {
-      exports.save(namespaces);
-      exports.names = [];
-      exports.skips = [];
-      var split = (typeof namespaces === "string" ? namespaces : "").split(/[\s,]+/);
-      var len = split.length;
-      for (var i = 0; i < len; i++) {
-        if (!split[i])
-          continue;
-        namespaces = split[i].replace(/\*/g, ".*?");
-        if (namespaces[0] === "-") {
-          exports.skips.push(new RegExp("^" + namespaces.substr(1) + "$"));
-        } else {
-          exports.names.push(new RegExp("^" + namespaces + "$"));
-        }
-      }
-    }
-    function disable() {
-      exports.enable("");
-    }
-    function enabled(name) {
-      var i, len;
-      for (i = 0, len = exports.skips.length; i < len; i++) {
-        if (exports.skips[i].test(name)) {
-          return false;
-        }
-      }
-      for (i = 0, len = exports.names.length; i < len; i++) {
-        if (exports.names[i].test(name)) {
-          return true;
-        }
-      }
-      return false;
-    }
-    function coerce(val) {
-      if (val instanceof Error)
-        return val.stack || val.message;
-      return val;
-    }
-  }
-});
-
-// node_modules/express/node_modules/debug/src/browser.js
-var require_browser3 = __commonJS({
-  "node_modules/express/node_modules/debug/src/browser.js"(exports, module) {
-    exports = module.exports = require_debug3();
-    exports.log = log;
-    exports.formatArgs = formatArgs;
-    exports.save = save;
-    exports.load = load;
-    exports.useColors = useColors;
-    exports.storage = "undefined" != typeof chrome && "undefined" != typeof chrome.storage ? chrome.storage.local : localstorage();
-    exports.colors = [
-      "lightseagreen",
-      "forestgreen",
-      "goldenrod",
-      "dodgerblue",
-      "darkorchid",
-      "crimson"
-    ];
-    function useColors() {
-      if (typeof window !== "undefined" && window.process && window.process.type === "renderer") {
-        return true;
-      }
-      return typeof document !== "undefined" && document.documentElement && document.documentElement.style && document.documentElement.style.WebkitAppearance || // is firebug? http://stackoverflow.com/a/398120/376773
-      typeof window !== "undefined" && window.console && (window.console.firebug || window.console.exception && window.console.table) || // is firefox >= v31?
-      // https://developer.mozilla.org/en-US/docs/Tools/Web_Console#Styling_messages
-      typeof navigator !== "undefined" && navigator.userAgent && navigator.userAgent.toLowerCase().match(/firefox\/(\d+)/) && parseInt(RegExp.$1, 10) >= 31 || // double check webkit in userAgent just in case we are in a worker
-      typeof navigator !== "undefined" && navigator.userAgent && navigator.userAgent.toLowerCase().match(/applewebkit\/(\d+)/);
-    }
-    exports.formatters.j = function(v) {
-      try {
-        return JSON.stringify(v);
-      } catch (err) {
-        return "[UnexpectedJSONParseError]: " + err.message;
-      }
-    };
-    function formatArgs(args) {
-      var useColors2 = this.useColors;
-      args[0] = (useColors2 ? "%c" : "") + this.namespace + (useColors2 ? " %c" : " ") + args[0] + (useColors2 ? "%c " : " ") + "+" + exports.humanize(this.diff);
-      if (!useColors2)
-        return;
-      var c = "color: " + this.color;
-      args.splice(1, 0, c, "color: inherit");
-      var index = 0;
-      var lastC = 0;
-      args[0].replace(/%[a-zA-Z%]/g, function(match) {
-        if ("%%" === match)
-          return;
-        index++;
-        if ("%c" === match) {
-          lastC = index;
-        }
-      });
-      args.splice(lastC, 0, c);
-    }
-    function log() {
-      return "object" === typeof console && console.log && Function.prototype.apply.call(console.log, console, arguments);
-    }
-    function save(namespaces) {
-      try {
-        if (null == namespaces) {
-          exports.storage.removeItem("debug");
-        } else {
-          exports.storage.debug = namespaces;
-        }
-      } catch (e) {
-      }
-    }
-    function load() {
-      var r;
-      try {
-        r = exports.storage.debug;
-      } catch (e) {
-      }
-      if (!r && typeof process !== "undefined" && "env" in process) {
-        r = process.env.DEBUG;
-      }
-      return r;
-    }
-    exports.enable(load());
-    function localstorage() {
-      try {
-        return window.localStorage;
-      } catch (e) {
-      }
-    }
-  }
-});
-
-// node_modules/express/node_modules/debug/src/node.js
-var require_node3 = __commonJS({
-  "node_modules/express/node_modules/debug/src/node.js"(exports, module) {
-    var tty = __require("tty");
-    var util = __require("util");
-    exports = module.exports = require_debug3();
-    exports.init = init;
-    exports.log = log;
-    exports.formatArgs = formatArgs;
-    exports.save = save;
-    exports.load = load;
-    exports.useColors = useColors;
-    exports.colors = [6, 2, 3, 4, 5, 1];
-    exports.inspectOpts = Object.keys(process.env).filter(function(key) {
-      return /^debug_/i.test(key);
-    }).reduce(function(obj, key) {
-      var prop = key.substring(6).toLowerCase().replace(/_([a-z])/g, function(_, k) {
-        return k.toUpperCase();
-      });
-      var val = process.env[key];
-      if (/^(yes|on|true|enabled)$/i.test(val))
-        val = true;
-      else if (/^(no|off|false|disabled)$/i.test(val))
-        val = false;
-      else if (val === "null")
-        val = null;
-      else
-        val = Number(val);
-      obj[prop] = val;
-      return obj;
-    }, {});
-    var fd = parseInt(process.env.DEBUG_FD, 10) || 2;
-    if (1 !== fd && 2 !== fd) {
-      util.deprecate(function() {
-      }, "except for stderr(2) and stdout(1), any other usage of DEBUG_FD is deprecated. Override debug.log if you want to use a different log function (https://git.io/debug_fd)")();
-    }
-    var stream = 1 === fd ? process.stdout : 2 === fd ? process.stderr : createWritableStdioStream(fd);
-    function useColors() {
-      return "colors" in exports.inspectOpts ? Boolean(exports.inspectOpts.colors) : tty.isatty(fd);
-    }
-    exports.formatters.o = function(v) {
-      this.inspectOpts.colors = this.useColors;
-      return util.inspect(v, this.inspectOpts).split("\n").map(function(str) {
-        return str.trim();
-      }).join(" ");
-    };
-    exports.formatters.O = function(v) {
-      this.inspectOpts.colors = this.useColors;
-      return util.inspect(v, this.inspectOpts);
-    };
-    function formatArgs(args) {
-      var name = this.namespace;
-      var useColors2 = this.useColors;
-      if (useColors2) {
-        var c = this.color;
-        var prefix = "  \x1B[3" + c + ";1m" + name + " \x1B[0m";
-        args[0] = prefix + args[0].split("\n").join("\n" + prefix);
-        args.push("\x1B[3" + c + "m+" + exports.humanize(this.diff) + "\x1B[0m");
-      } else {
-        args[0] = (/* @__PURE__ */ new Date()).toUTCString() + " " + name + " " + args[0];
-      }
-    }
-    function log() {
-      return stream.write(util.format.apply(util, arguments) + "\n");
-    }
-    function save(namespaces) {
-      if (null == namespaces) {
-        delete process.env.DEBUG;
-      } else {
-        process.env.DEBUG = namespaces;
-      }
-    }
-    function load() {
-      return process.env.DEBUG;
-    }
-    function createWritableStdioStream(fd2) {
-      var stream2;
-      var tty_wrap = process.binding("tty_wrap");
-      switch (tty_wrap.guessHandleType(fd2)) {
-        case "TTY":
-          stream2 = new tty.WriteStream(fd2);
-          stream2._type = "tty";
-          if (stream2._handle && stream2._handle.unref) {
-            stream2._handle.unref();
-          }
-          break;
-        case "FILE":
-          var fs2 = __require("fs");
-          stream2 = new fs2.SyncWriteStream(fd2, { autoClose: false });
-          stream2._type = "fs";
-          break;
-        case "PIPE":
-        case "TCP":
-          var net = __require("net");
-          stream2 = new net.Socket({
-            fd: fd2,
-            readable: false,
-            writable: true
-          });
-          stream2.readable = false;
-          stream2.read = null;
-          stream2._type = "pipe";
-          if (stream2._handle && stream2._handle.unref) {
-            stream2._handle.unref();
-          }
-          break;
-        default:
-          throw new Error("Implement me. Unknown stream file type!");
-      }
-      stream2.fd = fd2;
-      stream2._isStdio = true;
-      return stream2;
-    }
-    function init(debug) {
-      debug.inspectOpts = {};
-      var keys = Object.keys(exports.inspectOpts);
-      for (var i = 0; i < keys.length; i++) {
-        debug.inspectOpts[keys[i]] = exports.inspectOpts[keys[i]];
-      }
-    }
-    exports.enable(load());
-  }
-});
-
-// node_modules/express/node_modules/debug/src/index.js
-var require_src3 = __commonJS({
-  "node_modules/express/node_modules/debug/src/index.js"(exports, module) {
-    if (typeof process !== "undefined" && process.type === "renderer") {
-      module.exports = require_browser3();
-    } else {
-      module.exports = require_node3();
-    }
-  }
-});
-
 // node_modules/array-flatten/array-flatten.js
 var require_array_flatten = __commonJS({
   "node_modules/array-flatten/array-flatten.js"(exports, module) {
@@ -18398,8 +17486,7 @@ var require_path_to_regexp = __commonJS({
       var m;
       if (path2 instanceof RegExp) {
         while (m = MATCHING_GROUP_REGEXP.exec(path2.source)) {
-          if (m[0][0] === "\\")
-            continue;
+          if (m[0][0] === "\\") continue;
           keys.push({
             name: m[1] || name++,
             optional: false,
@@ -18463,8 +17550,7 @@ var require_path_to_regexp = __commonJS({
         }
       );
       while (m = MATCHING_GROUP_REGEXP.exec(path2)) {
-        if (m[0][0] === "\\")
-          continue;
+        if (m[0][0] === "\\") continue;
         if (keysOffset + i === keys.length || keys[keysOffset + i].offset > m.index) {
           keys.splice(keysOffset + i, 0, {
             name: name++,
@@ -18491,7 +17577,7 @@ var require_layer = __commonJS({
   "node_modules/express/lib/router/layer.js"(exports, module) {
     "use strict";
     var pathRegexp = require_path_to_regexp();
-    var debug = require_src3()("express:router:layer");
+    var debug = require_src()("express:router:layer");
     var hasOwnProperty = Object.prototype.hasOwnProperty;
     module.exports = Layer;
     function Layer(path2, options, fn) {
@@ -18629,7 +17715,7 @@ var require_methods = __commonJS({
 var require_route = __commonJS({
   "node_modules/express/lib/router/route.js"(exports, module) {
     "use strict";
-    var debug = require_src3()("express:router:route");
+    var debug = require_src()("express:router:route");
     var flatten = require_array_flatten();
     var Layer = require_layer();
     var methods = require_methods();
@@ -18759,7 +17845,7 @@ var require_router = __commonJS({
     var Layer = require_layer();
     var methods = require_methods();
     var mixin = require_utils_merge();
-    var debug = require_src3()("express:router");
+    var debug = require_src()("express:router");
     var deprecate = require_depd()("express");
     var flatten = require_array_flatten();
     var parseUrl = require_parseurl();
@@ -18822,8 +17908,7 @@ var require_router = __commonJS({
       req.next = next;
       if (req.method === "OPTIONS") {
         done = wrap(done, function(old, err) {
-          if (err || options.length === 0)
-            return old(err);
+          if (err || options.length === 0) return old(err);
           sendOptionsResponse(res, options, old);
         });
       }
@@ -18911,8 +17996,7 @@ var require_router = __commonJS({
             return;
           }
           var c = path2[layerPath.length];
-          if (c && c !== "/" && c !== ".")
-            return next(layerError);
+          if (c && c !== "/" && c !== ".") return next(layerError);
           debug("trim prefix (%s) from url %s", layerPath, req.url);
           removed = layerPath;
           req.url = protohost + req.url.slice(protohost.length + removed.length);
@@ -18978,8 +18062,7 @@ var require_router = __commonJS({
           param(err);
           return;
         }
-        if (!fn)
-          return param();
+        if (!fn) return param();
         try {
           fn(req, res, paramCallback, paramVal, key.name);
         } catch (e) {
@@ -19144,8 +18227,7 @@ var require_init = __commonJS({
     var setPrototypeOf = require_setprototypeof();
     exports.init = function(app2) {
       return function expressInit(req, res, next) {
-        if (app2.enabled("x-powered-by"))
-          res.setHeader("X-Powered-By", "Express");
+        if (app2.enabled("x-powered-by")) res.setHeader("X-Powered-By", "Express");
         req.res = res;
         res.req = req;
         req.next = next;
@@ -19190,7 +18272,7 @@ var require_query = __commonJS({
 var require_view = __commonJS({
   "node_modules/express/lib/view.js"(exports, module) {
     "use strict";
-    var debug = require_src3()("express:view");
+    var debug = require_src()("express:view");
     var path2 = __require("path");
     var fs2 = __require("fs");
     var dirname = path2.dirname;
@@ -19487,440 +18569,6 @@ var require_content_disposition = __commonJS({
   }
 });
 
-// node_modules/send/node_modules/debug/node_modules/ms/index.js
-var require_ms4 = __commonJS({
-  "node_modules/send/node_modules/debug/node_modules/ms/index.js"(exports, module) {
-    var s = 1e3;
-    var m = s * 60;
-    var h = m * 60;
-    var d = h * 24;
-    var y = d * 365.25;
-    module.exports = function(val, options) {
-      options = options || {};
-      var type = typeof val;
-      if (type === "string" && val.length > 0) {
-        return parse(val);
-      } else if (type === "number" && isNaN(val) === false) {
-        return options.long ? fmtLong(val) : fmtShort(val);
-      }
-      throw new Error(
-        "val is not a non-empty string or a valid number. val=" + JSON.stringify(val)
-      );
-    };
-    function parse(str) {
-      str = String(str);
-      if (str.length > 100) {
-        return;
-      }
-      var match = /^((?:\d+)?\.?\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|years?|yrs?|y)?$/i.exec(
-        str
-      );
-      if (!match) {
-        return;
-      }
-      var n = parseFloat(match[1]);
-      var type = (match[2] || "ms").toLowerCase();
-      switch (type) {
-        case "years":
-        case "year":
-        case "yrs":
-        case "yr":
-        case "y":
-          return n * y;
-        case "days":
-        case "day":
-        case "d":
-          return n * d;
-        case "hours":
-        case "hour":
-        case "hrs":
-        case "hr":
-        case "h":
-          return n * h;
-        case "minutes":
-        case "minute":
-        case "mins":
-        case "min":
-        case "m":
-          return n * m;
-        case "seconds":
-        case "second":
-        case "secs":
-        case "sec":
-        case "s":
-          return n * s;
-        case "milliseconds":
-        case "millisecond":
-        case "msecs":
-        case "msec":
-        case "ms":
-          return n;
-        default:
-          return void 0;
-      }
-    }
-    function fmtShort(ms) {
-      if (ms >= d) {
-        return Math.round(ms / d) + "d";
-      }
-      if (ms >= h) {
-        return Math.round(ms / h) + "h";
-      }
-      if (ms >= m) {
-        return Math.round(ms / m) + "m";
-      }
-      if (ms >= s) {
-        return Math.round(ms / s) + "s";
-      }
-      return ms + "ms";
-    }
-    function fmtLong(ms) {
-      return plural(ms, d, "day") || plural(ms, h, "hour") || plural(ms, m, "minute") || plural(ms, s, "second") || ms + " ms";
-    }
-    function plural(ms, n, name) {
-      if (ms < n) {
-        return;
-      }
-      if (ms < n * 1.5) {
-        return Math.floor(ms / n) + " " + name;
-      }
-      return Math.ceil(ms / n) + " " + name + "s";
-    }
-  }
-});
-
-// node_modules/send/node_modules/debug/src/debug.js
-var require_debug4 = __commonJS({
-  "node_modules/send/node_modules/debug/src/debug.js"(exports, module) {
-    exports = module.exports = createDebug.debug = createDebug["default"] = createDebug;
-    exports.coerce = coerce;
-    exports.disable = disable;
-    exports.enable = enable;
-    exports.enabled = enabled;
-    exports.humanize = require_ms4();
-    exports.names = [];
-    exports.skips = [];
-    exports.formatters = {};
-    var prevTime;
-    function selectColor(namespace) {
-      var hash = 0, i;
-      for (i in namespace) {
-        hash = (hash << 5) - hash + namespace.charCodeAt(i);
-        hash |= 0;
-      }
-      return exports.colors[Math.abs(hash) % exports.colors.length];
-    }
-    function createDebug(namespace) {
-      function debug() {
-        if (!debug.enabled)
-          return;
-        var self = debug;
-        var curr = +/* @__PURE__ */ new Date();
-        var ms = curr - (prevTime || curr);
-        self.diff = ms;
-        self.prev = prevTime;
-        self.curr = curr;
-        prevTime = curr;
-        var args = new Array(arguments.length);
-        for (var i = 0; i < args.length; i++) {
-          args[i] = arguments[i];
-        }
-        args[0] = exports.coerce(args[0]);
-        if ("string" !== typeof args[0]) {
-          args.unshift("%O");
-        }
-        var index = 0;
-        args[0] = args[0].replace(/%([a-zA-Z%])/g, function(match, format) {
-          if (match === "%%")
-            return match;
-          index++;
-          var formatter = exports.formatters[format];
-          if ("function" === typeof formatter) {
-            var val = args[index];
-            match = formatter.call(self, val);
-            args.splice(index, 1);
-            index--;
-          }
-          return match;
-        });
-        exports.formatArgs.call(self, args);
-        var logFn = debug.log || exports.log || console.log.bind(console);
-        logFn.apply(self, args);
-      }
-      debug.namespace = namespace;
-      debug.enabled = exports.enabled(namespace);
-      debug.useColors = exports.useColors();
-      debug.color = selectColor(namespace);
-      if ("function" === typeof exports.init) {
-        exports.init(debug);
-      }
-      return debug;
-    }
-    function enable(namespaces) {
-      exports.save(namespaces);
-      exports.names = [];
-      exports.skips = [];
-      var split = (typeof namespaces === "string" ? namespaces : "").split(/[\s,]+/);
-      var len = split.length;
-      for (var i = 0; i < len; i++) {
-        if (!split[i])
-          continue;
-        namespaces = split[i].replace(/\*/g, ".*?");
-        if (namespaces[0] === "-") {
-          exports.skips.push(new RegExp("^" + namespaces.substr(1) + "$"));
-        } else {
-          exports.names.push(new RegExp("^" + namespaces + "$"));
-        }
-      }
-    }
-    function disable() {
-      exports.enable("");
-    }
-    function enabled(name) {
-      var i, len;
-      for (i = 0, len = exports.skips.length; i < len; i++) {
-        if (exports.skips[i].test(name)) {
-          return false;
-        }
-      }
-      for (i = 0, len = exports.names.length; i < len; i++) {
-        if (exports.names[i].test(name)) {
-          return true;
-        }
-      }
-      return false;
-    }
-    function coerce(val) {
-      if (val instanceof Error)
-        return val.stack || val.message;
-      return val;
-    }
-  }
-});
-
-// node_modules/send/node_modules/debug/src/browser.js
-var require_browser4 = __commonJS({
-  "node_modules/send/node_modules/debug/src/browser.js"(exports, module) {
-    exports = module.exports = require_debug4();
-    exports.log = log;
-    exports.formatArgs = formatArgs;
-    exports.save = save;
-    exports.load = load;
-    exports.useColors = useColors;
-    exports.storage = "undefined" != typeof chrome && "undefined" != typeof chrome.storage ? chrome.storage.local : localstorage();
-    exports.colors = [
-      "lightseagreen",
-      "forestgreen",
-      "goldenrod",
-      "dodgerblue",
-      "darkorchid",
-      "crimson"
-    ];
-    function useColors() {
-      if (typeof window !== "undefined" && window.process && window.process.type === "renderer") {
-        return true;
-      }
-      return typeof document !== "undefined" && document.documentElement && document.documentElement.style && document.documentElement.style.WebkitAppearance || // is firebug? http://stackoverflow.com/a/398120/376773
-      typeof window !== "undefined" && window.console && (window.console.firebug || window.console.exception && window.console.table) || // is firefox >= v31?
-      // https://developer.mozilla.org/en-US/docs/Tools/Web_Console#Styling_messages
-      typeof navigator !== "undefined" && navigator.userAgent && navigator.userAgent.toLowerCase().match(/firefox\/(\d+)/) && parseInt(RegExp.$1, 10) >= 31 || // double check webkit in userAgent just in case we are in a worker
-      typeof navigator !== "undefined" && navigator.userAgent && navigator.userAgent.toLowerCase().match(/applewebkit\/(\d+)/);
-    }
-    exports.formatters.j = function(v) {
-      try {
-        return JSON.stringify(v);
-      } catch (err) {
-        return "[UnexpectedJSONParseError]: " + err.message;
-      }
-    };
-    function formatArgs(args) {
-      var useColors2 = this.useColors;
-      args[0] = (useColors2 ? "%c" : "") + this.namespace + (useColors2 ? " %c" : " ") + args[0] + (useColors2 ? "%c " : " ") + "+" + exports.humanize(this.diff);
-      if (!useColors2)
-        return;
-      var c = "color: " + this.color;
-      args.splice(1, 0, c, "color: inherit");
-      var index = 0;
-      var lastC = 0;
-      args[0].replace(/%[a-zA-Z%]/g, function(match) {
-        if ("%%" === match)
-          return;
-        index++;
-        if ("%c" === match) {
-          lastC = index;
-        }
-      });
-      args.splice(lastC, 0, c);
-    }
-    function log() {
-      return "object" === typeof console && console.log && Function.prototype.apply.call(console.log, console, arguments);
-    }
-    function save(namespaces) {
-      try {
-        if (null == namespaces) {
-          exports.storage.removeItem("debug");
-        } else {
-          exports.storage.debug = namespaces;
-        }
-      } catch (e) {
-      }
-    }
-    function load() {
-      var r;
-      try {
-        r = exports.storage.debug;
-      } catch (e) {
-      }
-      if (!r && typeof process !== "undefined" && "env" in process) {
-        r = process.env.DEBUG;
-      }
-      return r;
-    }
-    exports.enable(load());
-    function localstorage() {
-      try {
-        return window.localStorage;
-      } catch (e) {
-      }
-    }
-  }
-});
-
-// node_modules/send/node_modules/debug/src/node.js
-var require_node4 = __commonJS({
-  "node_modules/send/node_modules/debug/src/node.js"(exports, module) {
-    var tty = __require("tty");
-    var util = __require("util");
-    exports = module.exports = require_debug4();
-    exports.init = init;
-    exports.log = log;
-    exports.formatArgs = formatArgs;
-    exports.save = save;
-    exports.load = load;
-    exports.useColors = useColors;
-    exports.colors = [6, 2, 3, 4, 5, 1];
-    exports.inspectOpts = Object.keys(process.env).filter(function(key) {
-      return /^debug_/i.test(key);
-    }).reduce(function(obj, key) {
-      var prop = key.substring(6).toLowerCase().replace(/_([a-z])/g, function(_, k) {
-        return k.toUpperCase();
-      });
-      var val = process.env[key];
-      if (/^(yes|on|true|enabled)$/i.test(val))
-        val = true;
-      else if (/^(no|off|false|disabled)$/i.test(val))
-        val = false;
-      else if (val === "null")
-        val = null;
-      else
-        val = Number(val);
-      obj[prop] = val;
-      return obj;
-    }, {});
-    var fd = parseInt(process.env.DEBUG_FD, 10) || 2;
-    if (1 !== fd && 2 !== fd) {
-      util.deprecate(function() {
-      }, "except for stderr(2) and stdout(1), any other usage of DEBUG_FD is deprecated. Override debug.log if you want to use a different log function (https://git.io/debug_fd)")();
-    }
-    var stream = 1 === fd ? process.stdout : 2 === fd ? process.stderr : createWritableStdioStream(fd);
-    function useColors() {
-      return "colors" in exports.inspectOpts ? Boolean(exports.inspectOpts.colors) : tty.isatty(fd);
-    }
-    exports.formatters.o = function(v) {
-      this.inspectOpts.colors = this.useColors;
-      return util.inspect(v, this.inspectOpts).split("\n").map(function(str) {
-        return str.trim();
-      }).join(" ");
-    };
-    exports.formatters.O = function(v) {
-      this.inspectOpts.colors = this.useColors;
-      return util.inspect(v, this.inspectOpts);
-    };
-    function formatArgs(args) {
-      var name = this.namespace;
-      var useColors2 = this.useColors;
-      if (useColors2) {
-        var c = this.color;
-        var prefix = "  \x1B[3" + c + ";1m" + name + " \x1B[0m";
-        args[0] = prefix + args[0].split("\n").join("\n" + prefix);
-        args.push("\x1B[3" + c + "m+" + exports.humanize(this.diff) + "\x1B[0m");
-      } else {
-        args[0] = (/* @__PURE__ */ new Date()).toUTCString() + " " + name + " " + args[0];
-      }
-    }
-    function log() {
-      return stream.write(util.format.apply(util, arguments) + "\n");
-    }
-    function save(namespaces) {
-      if (null == namespaces) {
-        delete process.env.DEBUG;
-      } else {
-        process.env.DEBUG = namespaces;
-      }
-    }
-    function load() {
-      return process.env.DEBUG;
-    }
-    function createWritableStdioStream(fd2) {
-      var stream2;
-      var tty_wrap = process.binding("tty_wrap");
-      switch (tty_wrap.guessHandleType(fd2)) {
-        case "TTY":
-          stream2 = new tty.WriteStream(fd2);
-          stream2._type = "tty";
-          if (stream2._handle && stream2._handle.unref) {
-            stream2._handle.unref();
-          }
-          break;
-        case "FILE":
-          var fs2 = __require("fs");
-          stream2 = new fs2.SyncWriteStream(fd2, { autoClose: false });
-          stream2._type = "fs";
-          break;
-        case "PIPE":
-        case "TCP":
-          var net = __require("net");
-          stream2 = new net.Socket({
-            fd: fd2,
-            readable: false,
-            writable: true
-          });
-          stream2.readable = false;
-          stream2.read = null;
-          stream2._type = "pipe";
-          if (stream2._handle && stream2._handle.unref) {
-            stream2._handle.unref();
-          }
-          break;
-        default:
-          throw new Error("Implement me. Unknown stream file type!");
-      }
-      stream2.fd = fd2;
-      stream2._isStdio = true;
-      return stream2;
-    }
-    function init(debug) {
-      debug.inspectOpts = {};
-      var keys = Object.keys(exports.inspectOpts);
-      for (var i = 0; i < keys.length; i++) {
-        debug.inspectOpts[keys[i]] = exports.inspectOpts[keys[i]];
-      }
-    }
-    exports.enable(load());
-  }
-});
-
-// node_modules/send/node_modules/debug/src/index.js
-var require_src4 = __commonJS({
-  "node_modules/send/node_modules/debug/src/index.js"(exports, module) {
-    if (typeof process !== "undefined" && process.type === "renderer") {
-      module.exports = require_browser4();
-    } else {
-      module.exports = require_node4();
-    }
-  }
-});
-
 // node_modules/send/node_modules/encodeurl/index.js
 var require_encodeurl2 = __commonJS({
   "node_modules/send/node_modules/encodeurl/index.js"(exports, module) {
@@ -20111,9 +18759,9 @@ var require_mime = __commonJS({
   }
 });
 
-// node_modules/ms/index.js
-var require_ms5 = __commonJS({
-  "node_modules/ms/index.js"(exports, module) {
+// node_modules/send/node_modules/ms/index.js
+var require_ms2 = __commonJS({
+  "node_modules/send/node_modules/ms/index.js"(exports, module) {
     var s = 1e3;
     var m = s * 60;
     var h = m * 60;
@@ -20313,7 +18961,7 @@ var require_send = __commonJS({
   "node_modules/send/index.js"(exports, module) {
     "use strict";
     var createError = require_http_errors();
-    var debug = require_src4()("send");
+    var debug = require_src()("send");
     var deprecate = require_depd()("send");
     var destroy = require_destroy();
     var encodeUrl = require_encodeurl2();
@@ -20322,7 +18970,7 @@ var require_send = __commonJS({
     var fresh = require_fresh();
     var fs2 = __require("fs");
     var mime = require_mime();
-    var ms = require_ms5();
+    var ms = require_ms2();
     var onFinished = require_on_finished();
     var parseRange = require_range_parser();
     var path2 = __require("path");
@@ -20612,8 +19260,7 @@ var require_send = __commonJS({
       len = Math.max(0, len - offset);
       if (options.end !== void 0) {
         var bytes = options.end - offset + 1;
-        if (len > bytes)
-          len = bytes;
+        if (len > bytes) len = bytes;
       }
       if (this._acceptRanges && BYTES_RANGE_REGEXP.test(ranges)) {
         ranges = parseRange(len, ranges, {
@@ -20658,10 +19305,8 @@ var require_send = __commonJS({
         if (err && err.code === "ENOENT" && !extname(path3) && path3[path3.length - 1] !== sep) {
           return next(err);
         }
-        if (err)
-          return self.onStatError(err);
-        if (stat.isDirectory())
-          return self.redirect(path3);
+        if (err) return self.onStatError(err);
+        if (stat.isDirectory()) return self.redirect(path3);
         self.emit("file", path3, stat);
         self.send(path3, stat);
       });
@@ -20672,10 +19317,8 @@ var require_send = __commonJS({
         var p = path3 + "." + self._extensions[i++];
         debug('stat "%s"', p);
         fs2.stat(p, function(err2, stat) {
-          if (err2)
-            return next(err2);
-          if (stat.isDirectory())
-            return next();
+          if (err2) return next(err2);
+          if (stat.isDirectory()) return next();
           self.emit("file", p, stat);
           self.send(p, stat);
         });
@@ -20686,17 +19329,14 @@ var require_send = __commonJS({
       var self = this;
       function next(err) {
         if (++i >= self._index.length) {
-          if (err)
-            return self.onStatError(err);
+          if (err) return self.onStatError(err);
           return self.error(404);
         }
         var p = join(path3, self._index[i]);
         debug('stat "%s"', p);
         fs2.stat(p, function(err2, stat) {
-          if (err2)
-            return next(err2);
-          if (stat.isDirectory())
-            return next();
+          if (err2) return next(err2);
+          if (stat.isDirectory()) return next();
           self.emit("file", p, stat);
           self.send(p, stat);
         });
@@ -20723,8 +19363,7 @@ var require_send = __commonJS({
     };
     SendStream.prototype.type = function type(path3) {
       var res = this.res;
-      if (res.getHeader("Content-Type"))
-        return;
+      if (res.getHeader("Content-Type")) return;
       var type2 = mime.lookup(path3);
       if (!type2) {
         debug("no content-type");
@@ -21557,8 +20196,7 @@ var require_proxy_addr = __commonJS({
         trust = compile(trust);
       }
       for (var i = 0; i < addrs.length - 1; i++) {
-        if (trust(addrs[i], i))
-          continue;
+        if (trust(addrs[i], i)) continue;
         addrs.length = i + 1;
       }
       return addrs;
@@ -21644,8 +20282,7 @@ var require_proxy_addr = __commonJS({
     }
     function trustMulti(subnets) {
       return function trust(addr) {
-        if (!isip(addr))
-          return false;
+        if (!isip(addr)) return false;
         var ip = parseip(addr);
         var ipconv;
         var kind = ip.kind();
@@ -21677,8 +20314,7 @@ var require_proxy_addr = __commonJS({
       var subnetisipv4 = subnetkind === "ipv4";
       var subnetrange = subnet[1];
       return function trust(addr) {
-        if (!isip(addr))
-          return false;
+        if (!isip(addr)) return false;
         var ip = parseip(addr);
         var kind = ip.kind();
         if (kind !== subnetkind) {
@@ -21710,12 +20346,9 @@ var require_utils2 = __commonJS({
     exports.etag = createETagGenerator({ weak: false });
     exports.wetag = createETagGenerator({ weak: true });
     exports.isAbsolute = function(path2) {
-      if ("/" === path2[0])
-        return true;
-      if (":" === path2[1] && ("\\" === path2[2] || "/" === path2[2]))
-        return true;
-      if ("\\\\" === path2.substring(0, 2))
-        return true;
+      if ("/" === path2[0]) return true;
+      if (":" === path2[1] && ("\\" === path2[2] || "/" === path2[2])) return true;
+      if ("\\\\" === path2.substring(0, 2)) return true;
     };
     exports.flatten = deprecate.function(
       flatten,
@@ -21790,8 +20423,7 @@ var require_utils2 = __commonJS({
       return fn;
     };
     exports.compileTrust = function(val) {
-      if (typeof val === "function")
-        return val;
+      if (typeof val === "function") return val;
       if (val === true) {
         return function() {
           return true;
@@ -21843,7 +20475,7 @@ var require_application = __commonJS({
     var methods = require_methods();
     var middleware = require_init();
     var query = require_query();
-    var debug = require_src3()("express:application");
+    var debug = require_src()("express:application");
     var View = require_view();
     var http = __require("http");
     var compileETag = require_utils2().compileETag;
@@ -22098,8 +20730,7 @@ var require_application = __commonJS({
       return server.listen.apply(server, arguments);
     };
     function logerror(err) {
-      if (this.get("env") !== "test")
-        console.error(err.stack || err.toString());
+      if (this.get("env") !== "test") console.error(err.stack || err.toString());
     }
     function tryRender(view, options, callback) {
       try {
@@ -22131,8 +20762,7 @@ var require_charset = __commonJS({
     }
     function parseCharset(str, i) {
       var match = simpleCharsetRegExp.exec(str);
-      if (!match)
-        return null;
+      if (!match) return null;
       var charset = match[1];
       var q = 1;
       if (match[2]) {
@@ -22230,8 +20860,7 @@ var require_encoding = __commonJS({
     }
     function parseEncoding(str, i) {
       var match = simpleEncodingRegExp.exec(str);
-      if (!match)
-        return null;
+      if (!match) return null;
       var encoding = match[1];
       var q = 1;
       if (match[2]) {
@@ -22318,20 +20947,17 @@ var require_language = __commonJS({
     }
     function parseLanguage(str, i) {
       var match = simpleLanguageRegExp.exec(str);
-      if (!match)
-        return null;
+      if (!match) return null;
       var prefix = match[1];
       var suffix = match[2];
       var full = prefix;
-      if (suffix)
-        full += "-" + suffix;
+      if (suffix) full += "-" + suffix;
       var q = 1;
       if (match[3]) {
         var params = match[3].split(";");
         for (var j = 0; j < params.length; j++) {
           var p = params[j].split("=");
-          if (p[0] === "q")
-            q = parseFloat(p[1]);
+          if (p[0] === "q") q = parseFloat(p[1]);
         }
       }
       return {
@@ -22354,8 +20980,7 @@ var require_language = __commonJS({
     }
     function specify(language, spec, index) {
       var p = parseLanguage(language);
-      if (!p)
-        return null;
+      if (!p) return null;
       var s = 0;
       if (spec.full.toLowerCase() === p.full.toLowerCase()) {
         s |= 4;
@@ -22417,8 +21042,7 @@ var require_mediaType = __commonJS({
     }
     function parseMediaType(str, i) {
       var match = simpleMediaTypeRegExp.exec(str);
-      if (!match)
-        return null;
+      if (!match) return null;
       var params = /* @__PURE__ */ Object.create(null);
       var q = 1;
       var subtype = match[2];
@@ -22757,8 +21381,7 @@ var require_request = __commonJS({
     );
     req.range = function range(size, options) {
       var range2 = this.get("Range");
-      if (!range2)
-        return;
+      if (!range2) return;
       return parseRange(size, range2, options);
     };
     req.param = function param(name, defaultValue) {
@@ -22767,12 +21390,9 @@ var require_request = __commonJS({
       var query = this.query || {};
       var args = arguments.length === 1 ? "name" : "name, default";
       deprecate("req.param(" + args + "): Use req.params, req.body, or req.query instead");
-      if (null != params[name] && params.hasOwnProperty(name))
-        return params[name];
-      if (null != body[name])
-        return body[name];
-      if (null != query[name])
-        return query[name];
+      if (null != params[name] && params.hasOwnProperty(name)) return params[name];
+      if (null != body[name]) return body[name];
+      if (null != query[name]) return query[name];
       return defaultValue;
     };
     req.is = function is(types) {
@@ -22810,8 +21430,7 @@ var require_request = __commonJS({
     });
     defineGetter(req, "subdomains", function subdomains() {
       var hostname = this.hostname;
-      if (!hostname)
-        return [];
+      if (!hostname) return [];
       var offset = this.app.get("subdomain offset");
       var subdomains2 = !isIP(hostname) ? hostname.split(".").reverse() : [hostname];
       return subdomains2.slice(offset);
@@ -22827,8 +21446,7 @@ var require_request = __commonJS({
       } else if (host.indexOf(",") !== -1) {
         host = host.substring(0, host.indexOf(",")).trimRight();
       }
-      if (!host)
-        return;
+      if (!host) return;
       var offset = host[0] === "[" ? host.indexOf("]") + 1 : 0;
       var index = host.indexOf(":", offset);
       return index !== -1 ? host.substring(0, index) : host;
@@ -22840,8 +21458,7 @@ var require_request = __commonJS({
       var method = this.method;
       var res = this.res;
       var status = res.statusCode;
-      if ("GET" !== method && "HEAD" !== method)
-        return false;
+      if ("GET" !== method && "HEAD" !== method) return false;
       if (status >= 200 && status < 300 || 304 === status) {
         return fresh(this.headers, {
           "etag": res.get("ETag"),
@@ -22872,17 +21489,13 @@ var require_cookie_signature = __commonJS({
   "node_modules/cookie-signature/index.js"(exports) {
     var crypto = __require("crypto");
     exports.sign = function(val, secret) {
-      if ("string" != typeof val)
-        throw new TypeError("Cookie value must be provided as a string.");
-      if ("string" != typeof secret)
-        throw new TypeError("Secret string must be provided.");
+      if ("string" != typeof val) throw new TypeError("Cookie value must be provided as a string.");
+      if ("string" != typeof secret) throw new TypeError("Secret string must be provided.");
       return val + "." + crypto.createHmac("sha256", secret).update(val).digest("base64").replace(/\=+$/, "");
     };
     exports.unsign = function(val, secret) {
-      if ("string" != typeof val)
-        throw new TypeError("Signed cookie string must be provided.");
-      if ("string" != typeof secret)
-        throw new TypeError("Secret string must be provided.");
+      if ("string" != typeof val) throw new TypeError("Signed cookie string must be provided.");
+      if ("string" != typeof secret) throw new TypeError("Secret string must be provided.");
       var str = val.slice(0, val.lastIndexOf(".")), mac = exports.sign(str, secret);
       return sha1(mac) == sha1(val) ? str : false;
     };
@@ -22909,16 +21522,14 @@ var require_cookie = __commonJS({
       }
       var obj = {};
       var len = str.length;
-      if (len < 2)
-        return obj;
+      if (len < 2) return obj;
       var dec = opt && opt.decode || decode;
       var index = 0;
       var eqIdx = 0;
       var endIdx = 0;
       do {
         eqIdx = str.indexOf("=", index);
-        if (eqIdx === -1)
-          break;
+        if (eqIdx === -1) break;
         endIdx = str.indexOf(";", index);
         if (endIdx === -1) {
           endIdx = len;
@@ -22946,16 +21557,14 @@ var require_cookie = __commonJS({
     function startIndex(str, index, max) {
       do {
         var code = str.charCodeAt(index);
-        if (code !== 32 && code !== 9)
-          return index;
+        if (code !== 32 && code !== 9) return index;
       } while (++index < max);
       return max;
     }
     function endIndex(str, index, min) {
       while (index > min) {
         var code = str.charCodeAt(--index);
-        if (code !== 32 && code !== 9)
-          return index + 1;
+        if (code !== 32 && code !== 9) return index + 1;
       }
       return min;
     }
@@ -22972,8 +21581,7 @@ var require_cookie = __commonJS({
         throw new TypeError("argument val is invalid");
       }
       var str = name + "=" + value;
-      if (!opt)
-        return str;
+      if (!opt) return str;
       if (null != opt.maxAge) {
         var maxAge = Math.floor(opt.maxAge);
         if (!isFinite(maxAge)) {
@@ -23173,8 +21781,7 @@ var require_response = __commonJS({
     };
     res.links = function(links) {
       var link = this.get("Link") || "";
-      if (link)
-        link += ", ";
+      if (link) link += ", ";
       return this.set("Link", link + Object.keys(links).map(function(rel) {
         return "<" + links[rel] + '>; rel="' + rel + '"';
       }).join(", "));
@@ -23204,6 +21811,7 @@ var require_response = __commonJS({
         chunk = statuses.message[chunk];
       }
       switch (typeof chunk) {
+        // string defaulting to html
         case "string":
           if (!this.get("Content-Type")) {
             this.type("html");
@@ -23251,8 +21859,7 @@ var require_response = __commonJS({
           this.set("ETag", etag);
         }
       }
-      if (req.fresh)
-        this.statusCode = 304;
+      if (req.fresh) this.statusCode = 304;
       if (204 === this.statusCode || 304 === this.statusCode) {
         this.removeHeader("Content-Type");
         this.removeHeader("Content-Length");
@@ -23359,10 +21966,8 @@ var require_response = __commonJS({
       var pathname = encodeURI(path3);
       var file = send(req, pathname, opts);
       sendfile(res2, file, opts, function(err) {
-        if (done)
-          return done(err);
-        if (err && err.code === "EISDIR")
-          return next();
+        if (done) return done(err);
+        if (err && err.code === "EISDIR") return next();
         if (err && err.code !== "ECONNABORTED" && err.syscall !== "write") {
           next(err);
         }
@@ -23380,10 +21985,8 @@ var require_response = __commonJS({
       }
       var file = send(req, path3, opts);
       sendfile(res2, file, opts, function(err) {
-        if (done)
-          return done(err);
-        if (err && err.code === "EISDIR")
-          return next();
+        if (done) return done(err);
+        if (err && err.code === "EISDIR") return next();
         if (err && err.code !== "ECONNABORTED" && err.syscall !== "write") {
           next(err);
         }
@@ -23476,8 +22079,7 @@ var require_response = __commonJS({
           }
           if (!charsetRegExp.test(value)) {
             var charset = mime.charsets.lookup(value.split(";")[0]);
-            if (charset)
-              value += "; charset=" + charset.toLowerCase();
+            if (charset) value += "; charset=" + charset.toLowerCase();
           }
         }
         this.setHeader(field, value);
@@ -23591,8 +22193,7 @@ var require_response = __commonJS({
       }
       opts._locals = self.locals;
       done = done || function(err, str) {
-        if (err)
-          return req.next(err);
+        if (err) return req.next(err);
         self.send(str);
       };
       app2.render(view, opts, done);
@@ -23601,30 +22202,26 @@ var require_response = __commonJS({
       var done = false;
       var streaming;
       function onaborted() {
-        if (done)
-          return;
+        if (done) return;
         done = true;
         var err = new Error("Request aborted");
         err.code = "ECONNABORTED";
         callback(err);
       }
       function ondirectory() {
-        if (done)
-          return;
+        if (done) return;
         done = true;
         var err = new Error("EISDIR, read");
         err.code = "EISDIR";
         callback(err);
       }
       function onerror(err) {
-        if (done)
-          return;
+        if (done) return;
         done = true;
         callback(err);
       }
       function onend() {
-        if (done)
-          return;
+        if (done) return;
         done = true;
         callback();
       }
@@ -23632,19 +22229,15 @@ var require_response = __commonJS({
         streaming = false;
       }
       function onfinish(err) {
-        if (err && err.code === "ECONNRESET")
-          return onaborted();
-        if (err)
-          return onerror(err);
-        if (done)
-          return;
+        if (err && err.code === "ECONNRESET") return onaborted();
+        if (err) return onerror(err);
+        if (done) return;
         setImmediate(function() {
           if (streaming !== false && !done) {
             onaborted();
             return;
           }
-          if (done)
-            return;
+          if (done) return;
           done = true;
           callback();
         });
@@ -23681,6 +22274,7 @@ var require_response = __commonJS({
               return "\\u003e";
             case 38:
               return "\\u0026";
+            /* istanbul ignore next: unreachable default */
             default:
               return c;
           }
@@ -24405,41 +22999,29 @@ var VIDEO_EXTENSIONS = [
   ".ts"
 ];
 var STREAM_SOURCES = {
-  hankchin_animai4bt: {
-    url: "https://hankchin-animai4bt.hf.space",
-    name: "\u0372\u0585\u027E\u027E\u04BD\u0572\u0567\u0193\u0105\u04C0\u0105\xD7\u057E"
-  },
-  hankchin_bitsai: {
-    url: "https://hankchin-bitsai.hf.space",
-    name: "\u{1D4D1}\u{1D4F2}\u{1D4FD}\u{1D4E2}\u{1D4EE}\u{1D4EA}\u{1D4FB}\u{1D4EC}\u{1D4F1}"
-  },
-  hankchin_ruhq: {
-    url: "https://mikmc5-ruhq.hf.space",
-    name: "Gl\u{1F31E}DLS"
-  },
-  hankchin_ytsai: {
-    url: "https://hankchin-ytsai.hf.space",
+  cf_extto: {
+    url: "https://extto.h-y.workers.dev",
     name: "\uFF25\uFF58\uFF54\uFF54\uFF4F"
   },
-  mikmc5_bt4model: {
-    url: "https://mikmc5-bt4model.hf.space",
-    name: "\u15F7\uFF34\u2783\u24D6"
+  cf_btsow: {
+    url: "https://chrome-en.h-y.workers.dev",
+    name: "\u{1D401}\u{1D413}\u{1D412}\u{1D428}\u{1D430}"
   },
-  mikmc5_sow: {
-    url: "https://mikmc5-sow.hf.space",
-    name: "\u{1D4E3}\u2C95\u1D62\u{1D450}\u2C95\u2090\u{1D460}\u{1D460}"
+  cf_tdown: {
+    url: "https://tdown.h-y.workers.dev",
+    name: "\u275D\u{1D413}\u{1D428}\u{1D42B}\u{1D42B}\u{1D41E}\u{1D427}\u{1D42D}\u{1D403}\u{1D428}\u{1D430}\u{1D427}\u{1D425}\u{1D428}\u{1D41A}\u{1D41D}\u275E"
   },
-  mikmc5_t2n: {
-    url: "https://mikmc5-t2n.hf.space",
-    name: "\uFF2D\u039B\uFF27\uFF2E\u03A3\uFF34\uFF24\uFF2C"
-  },
-  mikmc5_uiai: {
-    url: "https://mikmc5-huiaiy.hf.space",
+  cf_uindex: {
+    url: "https://uindex.h-y.workers.dev",
     name: "\u3010\uFF35\uFF29\uFF2E\uFF24\uFF25\uFF38\u3011"
   },
-  testittv_limett: {
-    url: "https://oimerts-tcsv.hf.space",
-    name: "\u{1D413}\u{1D402}\u{1D412}\u{1D415}"
+  mikmc5_jackked: {
+    url: "https://mikmc5-jackked.hf.space",
+    name: "\u{1D64F}\u{1D63F}\u{1D664}\u{1D66C}\u{1D663}\u{1D661}\u{1D664}\u{1D656}\u{1D659}"
+  },
+  mikmc5_glodls: {
+    url: "https://mikmc5-ruhq.hf.space",
+    name: "Gl\u{1F31E}DLS"
   }
 };
 
@@ -24459,8 +23041,7 @@ function findBestFile(files, mediaType = "movie", mediaInfo = null) {
   }
   console.log(`Finding best file from ${files.length} files`);
   console.log("Media type:", mediaType);
-  if (mediaInfo)
-    console.log("Media info:", mediaInfo);
+  if (mediaInfo) console.log("Media info:", mediaInfo);
   const videoFiles = files.filter((file) => {
     const filename = (file.path || file.name || "").toLowerCase();
     return VIDEO_EXTENSIONS.some((ext) => filename.endsWith(ext));
@@ -24594,8 +23175,7 @@ var Premiumize = class extends BaseDebrid {
         const url = `${this.#apiUrl}${path2}`;
         console.log(`
 \u{1F537} Premiumize Request (Attempt ${i + 1}/${retries}):`, method, path2);
-        if (opts.body)
-          console.log("Request Body:", opts.body);
+        if (opts.body) console.log("Request Body:", opts.body);
         const controller = new AbortController();
         const timeout = setTimeout(() => controller.abort(), 3e4);
         if (method === "POST" && opts.body instanceof FormData) {
@@ -25032,14 +23612,12 @@ function base64Encode(str) {
 }
 function base64Decode(str) {
   str = str.replace(/-/g, "+").replace(/_/g, "/");
-  while (str.length % 4)
-    str += "=";
+  while (str.length % 4) str += "=";
   return Buffer.from(str, "base64").toString("ascii");
 }
 function parseQuality(str) {
   const qualityMatch = str.match(/(\d{3,4}p|4k|uhd)/i);
-  if (!qualityMatch)
-    return 0;
+  if (!qualityMatch) return 0;
   const quality = qualityMatch[0].toLowerCase();
   switch (quality) {
     case "4k":
@@ -25057,8 +23635,7 @@ function parseQuality(str) {
 }
 function parseSize(str) {
   const sizeMatch = str.match(/(\d+(?:\.\d+)?)\s*(GB|MB)/i);
-  if (!sizeMatch)
-    return 0;
+  if (!sizeMatch) return 0;
   const [, size, unit] = sizeMatch;
   const numericSize = parseFloat(size);
   if (unit.toLowerCase() === "gb") {
@@ -25115,6 +23692,70 @@ function detectVideoFeatures(filename) {
 var __dirname = path.dirname(fileURLToPath(import.meta.url));
 var app = (0, import_express.default)();
 var lock = new import_async_lock.default();
+var EnhancedCache = class {
+  constructor() {
+    this.cache = /* @__PURE__ */ new Map();
+    this.hashIndex = /* @__PURE__ */ new Map();
+    this.expirationTimes = /* @__PURE__ */ new Map();
+    this.CACHE_TTL = 12 * 60 * 60 * 1e3;
+    this.CLEANUP_INTERVAL = 60 * 60 * 1e3;
+    setInterval(() => this.cleanup(), this.CLEANUP_INTERVAL);
+  }
+  set(key, value) {
+    this.cache.set(key, value);
+    this.expirationTimes.set(key, Date.now() + this.CACHE_TTL);
+    if (value.streams) {
+      value.streams.forEach((stream) => {
+        if (stream.hash) {
+          const hash = stream.hash.toLowerCase();
+          if (!this.hashIndex.has(hash)) {
+            this.hashIndex.set(hash, /* @__PURE__ */ new Set());
+          }
+          this.hashIndex.get(hash).add(key);
+        }
+      });
+    }
+  }
+  get(key) {
+    const expiration = this.expirationTimes.get(key);
+    if (expiration && Date.now() > expiration) {
+      this.delete(key);
+      return null;
+    }
+    return this.cache.get(key);
+  }
+  delete(key) {
+    const value = this.cache.get(key);
+    if (value && value.streams) {
+      value.streams.forEach((stream) => {
+        if (stream.hash) {
+          const hash = stream.hash.toLowerCase();
+          const keySet = this.hashIndex.get(hash);
+          if (keySet) {
+            keySet.delete(key);
+            if (keySet.size === 0) {
+              this.hashIndex.delete(hash);
+            }
+          }
+        }
+      });
+    }
+    this.cache.delete(key);
+    this.expirationTimes.delete(key);
+  }
+  cleanup() {
+    const now = Date.now();
+    const expiredKeys = [];
+    for (const [key, expiration] of this.expirationTimes.entries()) {
+      if (now > expiration) {
+        expiredKeys.push(key);
+      }
+    }
+    expiredKeys.forEach((key) => this.delete(key));
+    console.log(`\u{1F9F9} Cleaned up ${expiredKeys.length} expired cache entries`);
+  }
+};
+var enhancedCache = new EnhancedCache();
 var inMemoryDB = {
   content: /* @__PURE__ */ new Map(),
   async findOne(query) {
@@ -25142,7 +23783,6 @@ var inMemoryDB = {
     }
     return key;
   },
-  // Save content to in-memory db
   async save(contentData) {
     const contentKey = this.generateKey(contentData);
     this.content.set(contentKey, { ...contentData });
@@ -25150,8 +23790,7 @@ var inMemoryDB = {
   }
 };
 function getQualitySymbol(qualityStr) {
-  if (!qualityStr)
-    return "\u{1F92C}";
+  if (!qualityStr) return "\u{1F92C}";
   const qualityLower = qualityStr.toLowerCase();
   if (qualityLower.includes("4k") || qualityLower.includes("2160p") || qualityLower.includes("uhd")) {
     return "\u{1F5E3}\u{1F4A8}";
@@ -25169,27 +23808,23 @@ function getQualitySymbol(qualityStr) {
 }
 function createStreamEntry(stream, service, req) {
   let serviceName = "Unknown";
-  if (service === "debridlink")
-    serviceName = "DebridLink";
-  if (service === "premiumize")
-    serviceName = "Premiumize";
-  if (service === "torbox")
-    serviceName = "TorBox";
+  if (service === "debridlink") serviceName = "DebridLink";
+  if (service === "premiumize") serviceName = "Premiumize";
+  if (service === "torbox") serviceName = "TorBox";
   const qualityDisplay = stream.quality ? stream.quality.toUpperCase() : "";
   const qualitySymbol = getQualitySymbol(qualityDisplay || stream.filename);
   const features = detectVideoFeatures(stream.filename);
   const featureStr = features.length ? ` | ${features.join(" | ")}` : "";
   const streamName = [
     qualitySymbol,
-    // Dynamic quality symbol replacing the static 📺
     qualityDisplay,
     stream.size,
-    `\u225D\u{1F137}\u{1F148}\u{1F3F4}\u200D\u2620\uFE0F`
+    ` \u210D\u{1D550}-\u{1D53C}-\u{1D546} (^\u203F\u2022)`
   ].filter(Boolean).join(" | ");
   const streamTitle = [
     stream.filename,
     [
-      `\u{1F340} ${stream.source}`,
+      `.\u2618\uFE0E \u0741\u02D6 ${stream.source}`,
       featureStr
     ].filter(Boolean).join(" | ")
   ].filter(Boolean).join("\n");
@@ -25212,14 +23847,10 @@ function standardizeId(id) {
   return id;
 }
 function getIdType(id) {
-  if (id.startsWith("tt"))
-    return "imdb";
-  if (id.startsWith("tmdb:"))
-    return "tmdb";
-  if (id.startsWith("tmdb-"))
-    return "tmdb";
-  if (/^\d+$/.test(id))
-    return "tmdb";
+  if (id.startsWith("tt")) return "imdb";
+  if (id.startsWith("tmdb:")) return "tmdb";
+  if (id.startsWith("tmdb-")) return "tmdb";
+  if (/^\d+$/.test(id)) return "tmdb";
   return null;
 }
 function sortStreams(streams) {
@@ -25233,20 +23864,14 @@ function sortStreams(streams) {
     }
     const idealSizeRanges = {
       2160: { min: 1e4, max: 8e4 },
-      // 10GB - 80GB for 4K
       1080: { min: 2e3, max: 16e3 },
-      // 2GB - 16GB for 1080p
       720: { min: 1e3, max: 8e3 },
-      // 1GB - 8GB for 720p
       480: { min: 500, max: 4e3 }
-      // 500MB - 4GB for 480p
     };
     const idealRange = idealSizeRanges[qualityA] || { min: 0, max: Infinity };
     const getIdealScore = (size, range) => {
-      if (size >= range.min && size <= range.max)
-        return 0;
-      if (size < range.min)
-        return range.min - size;
+      if (size >= range.min && size <= range.max) return 0;
+      if (size < range.min) return range.min - size;
       return size - range.max;
     };
     const scoreA = getIdealScore(sizeA, idealRange);
@@ -25266,7 +23891,6 @@ app.use((0, import_cors.default)({
 app.use(import_express.default.static(path.join(__dirname, "public")));
 app.options("*", (0, import_cors.default)());
 app.get("/configure", (req, res) => {
-  const baseUrl = `${req.protocol}://${req.get("host")}`;
   res.sendFile(path.join(__dirname, "public", "configure.html"));
 });
 app.get("/manifest.json", (req, res) => {
@@ -25274,7 +23898,7 @@ app.get("/manifest.json", (req, res) => {
   const manifest = {
     id: "org.magnetio.hy",
     version: "1.0.0",
-    name: "\u{1F177} \u{1F148} \u{1F178}\u{1F441}\u2076",
+    name: "\u210D\u{1D550}-\u{1D53C}-\u{1D546} (^\u203F\u2022)",
     description: "Stream movies and series via Debrid services - Configuration Required",
     resources: [],
     types: ["movie", "series"],
@@ -25295,7 +23919,7 @@ app.get("/:apiKeys/manifest.json", (req, res) => {
     return res.json({
       id: "org.magnetio.hy",
       version: "1.0.0",
-      name: "\u{1F177} \u{1F148} \u{1F178}\u{1F441}\u2076",
+      name: "\u210D\u{1D550}-\u{1D53C}-\u{1D546} (^\u203F\u2022)",
       description: "Invalid API keys provided - Please check your configuration",
       resources: [],
       types: ["movie", "series"],
@@ -25311,7 +23935,7 @@ app.get("/:apiKeys/manifest.json", (req, res) => {
   const manifest = {
     id: "org.magnetio.hy",
     version: "1.0.0",
-    name: "\u{1F177} \u{1F148} \u{1F178}\u{1F441}\u2076",
+    name: "\u210D\u{1D550}-\u{1D53C}-\u{1D546} (^\u203F\u2022)",
     description: "Stream movies and series via Debrid services",
     resources: ["stream"],
     types: ["movie", "series"],
@@ -25353,7 +23977,7 @@ async function readContentData(type, tmdbId, season = null, episode = null) {
     return null;
   }
 }
-async function getStreams(type, id, season = null, episode = null) {
+async function getStreams(type, id, season = null, episode = null, maxPerScraper = 50) {
   try {
     console.log("\n\u{1F504} Fetching streams from APIs");
     const standardId = standardizeId(id);
@@ -25364,8 +23988,7 @@ async function getStreams(type, id, season = null, episode = null) {
       return [];
     }
     if (type === "series") {
-      if (!season || !episode)
-        throw new Error("Season and episode required for series");
+      if (!season || !episode) throw new Error("Season and episode required for series");
       query = `${standardId}:${season}:${episode}`;
     } else {
       query = standardId;
@@ -25377,31 +24000,49 @@ async function getStreams(type, id, season = null, episode = null) {
         const response = await fetch(apiUrl);
         if (!response.ok) {
           console.error(`API response not ok from ${source.name}:`, response.status);
-          return [];
+          return { source: source.name, results: [] };
         }
         const data = await response.json();
         if (!data?.results?.length) {
           console.log(`No results found from ${source.name}`);
-          return [];
+          return { source: source.name, results: [] };
         }
-        return data.results.map((result) => ({
-          ...result,
-          source: source.name
-        }));
+        const sortedResults = data.results.sort((a, b) => {
+          const qualityA = parseQuality(a.quality || a.title || "");
+          const qualityB = parseQuality(b.quality || b.title || "");
+          if (qualityA !== qualityB) {
+            return qualityB - qualityA;
+          }
+          const sizeA = parseSize(a.size || a.title || "");
+          const sizeB = parseSize(b.size || b.title || "");
+          return sizeB - sizeA;
+        });
+        const limitedResults = sortedResults.slice(0, maxPerScraper);
+        console.log(`${source.name}: ${data.results.length} total \u2192 ${limitedResults.length} selected`);
+        return {
+          source: source.name,
+          results: limitedResults.map((result) => ({
+            ...result,
+            source: source.name
+          }))
+        };
       } catch (error) {
         console.error(`Error fetching from ${source.name}:`, error);
-        return [];
+        return { source: source.name, results: [] };
       }
     });
-    const allResults = await Promise.all(fetchPromises);
+    const allScraperResults = await Promise.all(fetchPromises);
+    console.log("\n\u{1F4CA} Per-scraper results:");
+    allScraperResults.forEach((scraperResult) => {
+      console.log(`  ${scraperResult.source}: ${scraperResult.results.length} streams`);
+    });
+    const combinedResults = allScraperResults.flatMap((scraperResult) => scraperResult.results);
     const seenMagnets = /* @__PURE__ */ new Set();
-    const combinedResults = allResults.flat().reduce((unique, stream) => {
+    const uniqueResults = combinedResults.reduce((unique, stream) => {
       try {
-        if (!stream?.magnetLink)
-          return unique;
+        if (!stream?.magnetLink) return unique;
         const hash = stream.magnetLink.match(/btih:([a-f0-9]+)/i)?.[1]?.toLowerCase();
-        if (!hash || seenMagnets.has(hash))
-          return unique;
+        if (!hash || seenMagnets.has(hash)) return unique;
         seenMagnets.add(hash);
         const quality = stream.quality || stream.title?.match(/\d{3,4}p|4k|uhd|HDTS|CAM/i)?.[0] || "";
         const size = stream.size || stream.title?.match(/\d+(\.\d+)?\s*(GB|MB)/i)?.[0] || "";
@@ -25413,7 +24054,7 @@ async function getStreams(type, id, season = null, episode = null) {
           quality,
           size,
           source: stream.source
-          // Make sure source is included
+          // Preserve source information
         });
         return unique;
       } catch (error) {
@@ -25421,8 +24062,13 @@ async function getStreams(type, id, season = null, episode = null) {
         return unique;
       }
     }, []);
-    console.log(`Found ${combinedResults.length} unique streams from all sources`);
-    return combinedResults;
+    const totalOriginal = allScraperResults.reduce((sum, scraperResult) => sum + (scraperResult.results.length || 0), 0);
+    console.log(`
+\u{1F3AF} Results summary:`);
+    console.log(`  Total from all scrapers: ${totalOriginal}`);
+    console.log(`  After deduplication: ${uniqueResults.length}`);
+    console.log(`  Max per scraper limit: ${maxPerScraper}`);
+    return uniqueResults;
   } catch (error) {
     console.error("\u274C Error fetching streams:", error);
     return [];
@@ -25438,8 +24084,7 @@ async function mergeAndSaveStreams(type, tmdbId, newStreams = [], title, season 
   const lockKey = `${type}-${dbId}-${season}-${episode}`;
   try {
     return await lock.acquire(lockKey, async () => {
-      if (!newStreams.length)
-        return [];
+      if (!newStreams.length) return [];
       const query = { tmdbId: dbId, type };
       if (type === "series") {
         query.season = season;
@@ -25552,13 +24197,13 @@ app.get("/:apiKeys/stream/:type/:id.json", async (req, res) => {
       dbId = dbId.replace("tmdb-", "");
     }
     console.log(`Processing ${idType.toUpperCase()} ID: ${tmdbId} (DB ID: ${dbId})`);
+    if (type === "series") {
+      console.log(`Season: ${season}, Episode: ${episode}`);
+    }
     const availableServices = debridServices.map((service) => {
-      if (service instanceof DebridLink)
-        return "debridlink";
-      if (service instanceof Premiumize)
-        return "premiumize";
-      if (service instanceof TorBox)
-        return "torbox";
+      if (service instanceof DebridLink) return "debridlink";
+      if (service instanceof Premiumize) return "premiumize";
+      if (service instanceof TorBox) return "torbox";
       return null;
     }).filter(Boolean);
     console.log(`Available services: ${availableServices.join(", ")}`);
@@ -25580,8 +24225,7 @@ app.get("/:apiKeys/stream/:type/:id.json", async (req, res) => {
         const cachedServices = availableServices.filter(
           (service) => stream.cachedOn && stream.cachedOn[service]
         );
-        if (cachedServices.length === 0)
-          return;
+        if (cachedServices.length === 0) return;
         cachedServices.forEach((cachedService) => {
           processedStreamsArray.push(createStreamEntry(stream, cachedService, req));
         });
@@ -25621,13 +24265,11 @@ app.get("/:apiKeys/stream/:type/:id.json", async (req, res) => {
         for (const service of debridServices) {
           try {
             const serviceName = service instanceof DebridLink ? "debridlink" : service instanceof Premiumize ? "premiumize" : service instanceof TorBox ? "torbox" : null;
-            if (!serviceName)
-              continue;
+            if (!serviceName) continue;
             console.log(`Checking cache status with ${serviceName}...`);
             const results = await service.checkCacheStatuses(hashesToCheck);
             Object.entries(results).forEach(([hash, info]) => {
-              if (!cacheResults[hash])
-                cacheResults[hash] = {};
+              if (!cacheResults[hash]) cacheResults[hash] = {};
               cacheResults[hash][serviceName] = info.cached;
             });
           } catch (error) {
@@ -25691,13 +24333,11 @@ app.get("/:apiKeys/stream/:type/:id.json", async (req, res) => {
         for (const service of debridServices) {
           try {
             const serviceName = service instanceof DebridLink ? "debridlink" : service instanceof Premiumize ? "premiumize" : service instanceof TorBox ? "torbox" : null;
-            if (!serviceName)
-              continue;
+            if (!serviceName) continue;
             console.log(`Checking cache status with ${serviceName}...`);
             const results = await service.checkCacheStatuses(uncheckedHashes);
             Object.entries(results).forEach(([hash, info]) => {
-              if (!cacheResults[hash])
-                cacheResults[hash] = {};
+              if (!cacheResults[hash]) cacheResults[hash] = {};
               cacheResults[hash][serviceName] = info.cached;
             });
           } catch (error) {
@@ -25731,17 +24371,12 @@ app.get("/:apiKeys/stream/:type/:id.json", async (req, res) => {
         newStreams.forEach((stream) => {
           const hash = stream.hash.toLowerCase();
           const cachedInfo = cacheResults[hash];
-          if (!cachedInfo)
-            return;
+          if (!cachedInfo) return;
           const cachedServices = [];
-          if (cachedInfo.debridlink)
-            cachedServices.push("debridlink");
-          if (cachedInfo.premiumize)
-            cachedServices.push("premiumize");
-          if (cachedInfo.torbox)
-            cachedServices.push("torbox");
-          if (cachedServices.length === 0)
-            return;
+          if (cachedInfo.debridlink) cachedServices.push("debridlink");
+          if (cachedInfo.premiumize) cachedServices.push("premiumize");
+          if (cachedInfo.torbox) cachedServices.push("torbox");
+          if (cachedServices.length === 0) return;
           cachedServices.forEach((cachedService) => {
             newCachedStreams.push(createStreamEntry(stream, cachedService, req));
           });
@@ -25787,32 +24422,24 @@ app.get("/:apiKeys/:magnetLink", async (req, res) => {
       debridServices.sort((a, b) => {
         const aIsPreferred = a instanceof DebridLink && preferredService === "debridlink" || a instanceof Premiumize && preferredService === "premiumize" || a instanceof TorBox && preferredService === "torbox";
         const bIsPreferred = b instanceof DebridLink && preferredService === "debridlink" || b instanceof Premiumize && preferredService === "premiumize" || b instanceof TorBox && preferredService === "torbox";
-        if (aIsPreferred && !bIsPreferred)
-          return -1;
-        if (!aIsPreferred && bIsPreferred)
-          return 1;
+        if (aIsPreferred && !bIsPreferred) return -1;
+        if (!aIsPreferred && bIsPreferred) return 1;
         return 0;
       });
       console.log("Service order after sorting:");
       debridServices.forEach((service) => {
-        if (service instanceof DebridLink)
-          console.log("- DebridLink");
-        else if (service instanceof Premiumize)
-          console.log("- Premiumize");
-        else if (service instanceof TorBox)
-          console.log("- TorBox");
+        if (service instanceof DebridLink) console.log("- DebridLink");
+        else if (service instanceof Premiumize) console.log("- Premiumize");
+        else if (service instanceof TorBox) console.log("- TorBox");
       });
     }
     const cleanMagnet = decodedMagnet.replace(/&service=[^&]+/, "");
     for (const service of debridServices) {
       try {
         let serviceName = "Unknown";
-        if (service instanceof DebridLink)
-          serviceName = "DebridLink";
-        else if (service instanceof Premiumize)
-          serviceName = "Premiumize";
-        else if (service instanceof TorBox)
-          serviceName = "TorBox";
+        if (service instanceof DebridLink) serviceName = "DebridLink";
+        else if (service instanceof Premiumize) serviceName = "Premiumize";
+        else if (service instanceof TorBox) serviceName = "TorBox";
         console.log(`Trying service: ${serviceName}`);
         const streamUrl = await service.getStreamUrl(cleanMagnet);
         console.log(`\u2705 Success with ${serviceName}`);
@@ -25831,6 +24458,41 @@ app.get("/:apiKeys/:magnetLink", async (req, res) => {
     console.error("\u274C Error processing magnet:", error);
     res.status(500).json({ error: "Failed to process magnet", details: error.message });
   }
+});
+app.get("/stats", (req, res) => {
+  const cacheStats = {
+    size: enhancedCache.cache.size,
+    hashIndexSize: enhancedCache.hashIndex.size
+  };
+  res.json({
+    cache: cacheStats,
+    timestamp: (/* @__PURE__ */ new Date()).toISOString()
+  });
+});
+app.post("/cache/clear", (req, res) => {
+  enhancedCache.cache.clear();
+  enhancedCache.hashIndex.clear();
+  enhancedCache.expirationTimes.clear();
+  res.json({
+    message: "Cache cleared successfully",
+    timestamp: (/* @__PURE__ */ new Date()).toISOString()
+  });
+});
+app.get("/health", (req, res) => {
+  const memoryUsage = process.memoryUsage();
+  res.json({
+    status: "healthy",
+    uptime: process.uptime(),
+    memory: {
+      used: Math.round(memoryUsage.heapUsed / 1024 / 1024) + "MB",
+      total: Math.round(memoryUsage.heapTotal / 1024 / 1024) + "MB"
+    },
+    cache: {
+      size: enhancedCache.cache.size,
+      hashIndexSize: enhancedCache.hashIndex.size
+    },
+    timestamp: (/* @__PURE__ */ new Date()).toISOString()
+  });
 });
 app.use((err, req, res, next) => {
   console.error("\n\u274C Unhandled error:", err);
@@ -25925,6 +24587,9 @@ on-finished/index.js:
    *)
 
 body-parser/lib/read.js:
+body-parser/lib/types/raw.js:
+body-parser/lib/types/text.js:
+body-parser/index.js:
   (*!
    * body-parser
    * Copyright(c) 2014-2015 Douglas Christopher Wilson
@@ -25963,38 +24628,10 @@ type-is/index.js:
    *)
 
 body-parser/lib/types/json.js:
-  (*!
-   * body-parser
-   * Copyright(c) 2014 Jonathan Ong
-   * Copyright(c) 2014-2015 Douglas Christopher Wilson
-   * MIT Licensed
-   *)
-
-body-parser/lib/types/raw.js:
-  (*!
-   * body-parser
-   * Copyright(c) 2014-2015 Douglas Christopher Wilson
-   * MIT Licensed
-   *)
-
-body-parser/lib/types/text.js:
-  (*!
-   * body-parser
-   * Copyright(c) 2014-2015 Douglas Christopher Wilson
-   * MIT Licensed
-   *)
-
 body-parser/lib/types/urlencoded.js:
   (*!
    * body-parser
    * Copyright(c) 2014 Jonathan Ong
-   * Copyright(c) 2014-2015 Douglas Christopher Wilson
-   * MIT Licensed
-   *)
-
-body-parser/index.js:
-  (*!
-   * body-parser
    * Copyright(c) 2014-2015 Douglas Christopher Wilson
    * MIT Licensed
    *)
@@ -26007,6 +24644,7 @@ merge-descriptors/index.js:
    * MIT Licensed
    *)
 
+encodeurl/index.js:
 encodeurl/index.js:
   (*!
    * encodeurl
@@ -26039,6 +24677,15 @@ finalhandler/index.js:
    *)
 
 express/lib/router/layer.js:
+express/lib/router/route.js:
+express/lib/router/index.js:
+express/lib/middleware/init.js:
+express/lib/middleware/query.js:
+express/lib/view.js:
+express/lib/application.js:
+express/lib/request.js:
+express/lib/express.js:
+express/index.js:
   (*!
    * express
    * Copyright(c) 2009-2013 TJ Holowaychuk
@@ -26055,51 +24702,6 @@ methods/index.js:
    * MIT Licensed
    *)
 
-express/lib/router/route.js:
-  (*!
-   * express
-   * Copyright(c) 2009-2013 TJ Holowaychuk
-   * Copyright(c) 2013 Roman Shtylman
-   * Copyright(c) 2014-2015 Douglas Christopher Wilson
-   * MIT Licensed
-   *)
-
-express/lib/router/index.js:
-  (*!
-   * express
-   * Copyright(c) 2009-2013 TJ Holowaychuk
-   * Copyright(c) 2013 Roman Shtylman
-   * Copyright(c) 2014-2015 Douglas Christopher Wilson
-   * MIT Licensed
-   *)
-
-express/lib/middleware/init.js:
-  (*!
-   * express
-   * Copyright(c) 2009-2013 TJ Holowaychuk
-   * Copyright(c) 2013 Roman Shtylman
-   * Copyright(c) 2014-2015 Douglas Christopher Wilson
-   * MIT Licensed
-   *)
-
-express/lib/middleware/query.js:
-  (*!
-   * express
-   * Copyright(c) 2009-2013 TJ Holowaychuk
-   * Copyright(c) 2013 Roman Shtylman
-   * Copyright(c) 2014-2015 Douglas Christopher Wilson
-   * MIT Licensed
-   *)
-
-express/lib/view.js:
-  (*!
-   * express
-   * Copyright(c) 2009-2013 TJ Holowaychuk
-   * Copyright(c) 2013 Roman Shtylman
-   * Copyright(c) 2014-2015 Douglas Christopher Wilson
-   * MIT Licensed
-   *)
-
 safe-buffer/index.js:
   (*! safe-buffer. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> *)
 
@@ -26107,13 +24709,6 @@ content-disposition/index.js:
   (*!
    * content-disposition
    * Copyright(c) 2014-2017 Douglas Christopher Wilson
-   * MIT Licensed
-   *)
-
-encodeurl/index.js:
-  (*!
-   * encodeurl
-   * Copyright(c) 2016 Douglas Christopher Wilson
    * MIT Licensed
    *)
 
@@ -26163,18 +24758,10 @@ proxy-addr/index.js:
    *)
 
 express/lib/utils.js:
+express/lib/response.js:
   (*!
    * express
    * Copyright(c) 2009-2013 TJ Holowaychuk
-   * Copyright(c) 2014-2015 Douglas Christopher Wilson
-   * MIT Licensed
-   *)
-
-express/lib/application.js:
-  (*!
-   * express
-   * Copyright(c) 2009-2013 TJ Holowaychuk
-   * Copyright(c) 2013 Roman Shtylman
    * Copyright(c) 2014-2015 Douglas Christopher Wilson
    * MIT Licensed
    *)
@@ -26196,15 +24783,6 @@ accepts/index.js:
    * MIT Licensed
    *)
 
-express/lib/request.js:
-  (*!
-   * express
-   * Copyright(c) 2009-2013 TJ Holowaychuk
-   * Copyright(c) 2013 Roman Shtylman
-   * Copyright(c) 2014-2015 Douglas Christopher Wilson
-   * MIT Licensed
-   *)
-
 cookie/index.js:
   (*!
    * cookie
@@ -26220,38 +24798,12 @@ vary/index.js:
    * MIT Licensed
    *)
 
-express/lib/response.js:
-  (*!
-   * express
-   * Copyright(c) 2009-2013 TJ Holowaychuk
-   * Copyright(c) 2014-2015 Douglas Christopher Wilson
-   * MIT Licensed
-   *)
-
 serve-static/index.js:
   (*!
    * serve-static
    * Copyright(c) 2010 Sencha Inc.
    * Copyright(c) 2011 TJ Holowaychuk
    * Copyright(c) 2014-2016 Douglas Christopher Wilson
-   * MIT Licensed
-   *)
-
-express/lib/express.js:
-  (*!
-   * express
-   * Copyright(c) 2009-2013 TJ Holowaychuk
-   * Copyright(c) 2013 Roman Shtylman
-   * Copyright(c) 2014-2015 Douglas Christopher Wilson
-   * MIT Licensed
-   *)
-
-express/index.js:
-  (*!
-   * express
-   * Copyright(c) 2009-2013 TJ Holowaychuk
-   * Copyright(c) 2013 Roman Shtylman
-   * Copyright(c) 2014-2015 Douglas Christopher Wilson
    * MIT Licensed
    *)
 
