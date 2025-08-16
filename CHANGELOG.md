@@ -1,3 +1,9 @@
+# v0.0.2 (Sat Aug 16 2025)
+
+
+
+---
+
 # v0.0.1 (Sat Aug 16 2025)
 
 :tada: This release contains work from a new contributor! :tada:
